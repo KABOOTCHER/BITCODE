@@ -1,0 +1,80 @@
+
+.hidden{
+    display: none !important;
+}
+.logo{
+    position: relative;
+    text-align: center;
+}
+
+
+.heroWrap{
+    margin-bottom: 5rem;
+}
+.logo::before{
+    content: attr(data-text);
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    text-shadow: var(--lightBlueColor) 0 0 3rem;
+}
+
+
+@media (min-width:800px) {
+
+
+
+
+
+    .heroBlock{
+        display: none;
+    }
+    .heroWrap video{
+        display: none;
+    }
+
+    #smallAbout{
+        display: none;
+    }
+
+    #wideAbout{
+        display: flex;
+    }
+
+    #mobLogo{
+        display: none;
+    }
+
+    #PClogo{
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+@media(max-width:799px){
+
+    #PClogo{
+        display: none;
+    }
+
+    #mobLogo{
+        display: block;
+    }
+
+    #smallAbout{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #wideAbout{
+        display: none;
+    }
+}

@@ -17,7 +17,7 @@ var applyTextStroke = function (className, color, width)
 
 console.log(window.innerWidth)
 
-if(window.innerWidth >700){
+if(window.innerWidth >800){
   applyTextStroke("glowFillTitle", "var(--lightPrimaryColor)", 4);
   applyTextStroke("glowEmptyTitle", "var(--purpleColor)", 4);
   applyTextStroke("logoFooter ", "var(--orangeColor)", 4); 

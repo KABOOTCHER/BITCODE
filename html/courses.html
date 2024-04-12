@@ -8,154 +8,343 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/noise.css">
+    <link rel="stylesheet" href="/css/courses.css">
+    <link rel="stylesheet" href="/css/header.css">
 
-    <title>BITCODE</title>
+    <title>BITCODE - Курсы</title>
 </head>
 <header>
     <div class="burger-btn">
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
-      </div>
+    </div>
 
-<div class="menu">
-  <ul>
-    <li><a href="/index.html">Главная</a></li>
-    <li><a href="courses.html">Курсы</a></li>
-    <li><a href="#">Песочница</a></li>
-    <li><a href="#">Справочник</a></li>
-    <li><a href="#">О нас</a></li>
-  </ul>
-</div>
+    <div class="menu">
+        <ul>
+            <li><a href="/index.html">Главная</a></li>
+            <li><a href="courses.html">Курсы</a></li>
+            <li><a href="#">Песочница</a></li>
+            <li><a href="#">Справочник</a></li>
+            <li><a href="#">О нас</a></li>
+        </ul>
+    </div>
 
 </header>
+
 <body>
+
     <main class="main">
+        <h1 class="logo title" id="PClogo" data-text="BITCODE">BITCODE</h1>
         <div class="heroWrap">
             <video style="filter:grayscale(1)" src="/bgVid.mp4" width="100%" loop muted autoplay></video>
 
             <div class="  tv-screen tv-screen-content noise-effect  heroBlock ">
 
-                <h1 class="logo title">КУРСЫ</h1>
-                <h2 class="subTitle">создай свое будущее</h2>
-                <a href="#" class="button bigButton orangeButton">ОТПРАВИТЬСЯ</a>
+
+
+                <div class="aboutBlock" id="smallAbout">
+                    <h1 class="logo title" id="mobLogo" data-text="BITCODE">BITCODE</h1>
+                    <div class="wrap">
+                        <h1 class="title glowFillTitle" data-text="#наши направления">#наши направления</h1>
+                        <h2 class="subTitle">выбери свой путь</h2>
+
+                    </div>
+
+                    <img src="/img/stickers/stars.png" alt="" class="aboutImg">
+
+
+                </div>
+
             </div>
         </div>
 
 
-        <div class="marqLine">● &lt p &gt Стань лучшим&lt /p &gt ● console.log(“никогда не поздно”) ● &lt h1 &gt
-            начни сегодня&lt /h1 &gt ● воспользуйся возможностью </div>
 
 
+        <div class="aboutBlock" id="wideAbout">
 
-        <div class="aboutBlock">
             <div class="wrap">
-                <h1 class="title glowFillTitle" data-text="#учись лаконично">#учись лаконично</h1>
-                <h2 class="subTitle">ведь твое время важно</h2>
-                <p class="text">
-                    Главный принцип нашей школы - краткость.
-                    Вдохновись нашей атмосферой и начни 
-                    творить уже после первого задания.
-                </p>
-            </div>
-
-            <img src="/img/stickers/clock.png" alt="" class="aboutImg">
-
-
-        </div>
-
-        <div class="whiteBlock">
-            <div class="notificationBlock">
-                <div class="notificationNav">
-                    <img src="/img/navItems/hidePink.png" alt="" class="notificationIcon">
-                    <img src="/img/navItems/crossPink.png" alt="" class="notificationIcon">
-                </div>
-                <div class="notificationTitleBlock">
-                    <h1 class="title notificationTitle">#ВЫБЕРИ СВОЙ ПУТЬ</h1>
-                </div>
-
-                <div class="wayBlock">
-                    <div class="firstWay">Можешь начать с основ...</div>
-                    <div class="secondWay">или попробовать себя в деле</div>
-                </div>
-
-                <div class="windowsBlock">
-                    <div class="window windowOrange">
-                        <div class="notificationNav">
-                            <img src="/img/navItems/hideWhite.png" alt="" class="notificationIcon">
-                            <img src="/img/navItems/crossWhite.png" alt="" class="notificationIcon">
-                        </div>
-                        <div class="windowInfo">
-                            <div class="windowWrap">
-
-
-                                <div class="windowTitle">Новичок</div>
-                                <div class="windowSubtitle">Узнай основы <br> веб-разработки на <br> практическом курсе.
-                                </div>
-                            </div>
-                            <a href="#" class="button blueButton">Перейти ></a>
-                        </div>
-                    </div>
-
-                    <div class="window windowBlue">
-                        <div class="notificationNav">
-                            <img src="/img/navItems/hideWhite.png" alt="" class="notificationIcon">
-                            <img src="/img/navItems/crossWhite.png" alt="" class="notificationIcon">
-                        </div>
-                        <div class="windowInfo">
-                            <div class="windowWrap">
-
-
-                                <div class="windowTitle">Профи</div>
-                                <div class="windowSubtitle">Напиши свой скрипт<br> на нашем сайте,<br> прояви себя!
-                                </div>
-                            </div>
-                            <a href="#" class="button blueButton">Перейти ></a>
-                        </div>
-                    </div>
-
-
-                </div>
-
+                <h1 class="title glowFillTitle" data-text="#наши направления">#наши направления</h1>
+                <h2 class="subTitle">выбери свой путь</h2>
 
             </div>
-        </div>
 
-        <div class="advantagesBlock">
-            <h1 class="title glowEmptyTitle" data-text="#Что ты получишь">#Что ты получишь</h1>
-            <div class="advantageContainer">
-                <div class="advantageWrap">
-                  <div class="advantage" id="orangeDisk">
-                    <p class="diskText">Всегда <br> доступная <br><b>поддержка</b></p>
-                    <img src="/img/disketteSigns/247.png" alt="">
-                  </div>
-              
-                  <div class="advantage" id="purpleDisk">
-                    <p class="diskText"><b>Постоянный</b> <br> доступ <br> к заданиям</p>
-                    <img src="/img/disketteSigns/endless.png" alt="">
-                  </div>
-              
-                  <div class="advantage" id="blueDisk">
-                    <p class="diskText">Задания <br> <b>на любой</b><br> уровень</p>
-                    <img src="/img/disketteSigns/lamp.png" alt="">
-                  </div>
-                </div>
-              </div>
+            <img src="/img/stickers/stars.png" alt="" class="aboutImg">
+
 
         </div>
+
+
+
 
         <div class="contactBlock">
             <div class="screenBorder">
                 <div class="screen tv-screen tv-screen-content noise-effect">
-                    <h1 class="title screenTitle ">#СВЯЖИСЬ С НАМИ</h1>
-                    <form class="mainForm" action="#">
-                        <input placeholder="Ваше имя" type="text" name="name" id="nameField">
-                        <input placeholder="Ваш номер телефона" type="tel" name="phone" id="phoneField">
-                        <input placeholder="Ваш адрес эл.почты" type="email" name="email" id="emailField">
-                        <input class="button blueButton" id="formSendButton" type="button" value="Отправить ->">
-                    </form>
+
+                    <div class="windowsWrapper">
+                        <div class="window windowOrange">
+                            <div class="notificationNav">
+                                <img src="/img/navItems/hideWhite.png" alt="" class="notificationIcon">
+                                <img src="/img/navItems/crossWhite.png" alt="" class="notificationIcon">
+                            </div>
+                            <div class="windowInfo">
+                                <div class="windowWrap">
+
+
+                                    <div class="windowTitle">Навыки <br> HTML/CSS</div>
+
+                                </div>
+                                <a  id="button1" class="button blueButton">Открыть</a>
+                            </div>
+                        </div>
+                        <div class="window windowBlue">
+                            <div class="notificationNav">
+                                <img src="/img/navItems/hideWhite.png" alt="" class="notificationIcon">
+                                <img src="/img/navItems/crossWhite.png" alt="" class="notificationIcon">
+                            </div>
+                            <div class="windowInfo">
+                                <div class="windowWrap">
+
+
+                                    <div class="windowTitle">Основы <br>JavaScript</div>
+
+                                </div>
+                                <a  id="button2" class="button blueButton">Открыть</a>
+                            </div>
+                        </div>
+                        <div class="window windowOrange">
+                            <div class="notificationNav">
+                                <img src="/img/navItems/hideWhite.png" alt="" class="notificationIcon">
+                                <img src="/img/navItems/crossWhite.png" alt="" class="notificationIcon">
+                            </div>
+                            <div class="windowInfo">
+                                <div class="windowWrap">
+
+
+                                    <div class="windowTitle">PRO- <br>JavaScript</div>
+
+                                </div>
+                                <a  id="button3" class="button blueButton">Открыть</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="descriptionsWrapper">
+                        <div class="description hidden" id="course1">
+                            <h1 class="title screenTitle ">#Навыки HTML/CSS</h1>
+
+                            <div class="descriptionItem">
+                                <p class="descriptionTitle">> Что ты освоишь</p>
+                                <hr class="dasherHR">
+                                <p class="descriptionSubtitle">HTML, CSS, FLEX, GRID, Адаптивная верстка</p>
+                            </div>
+
+                            <div class="descriptionItem">
+                                <p class="descriptionTitle">> Сколько заданий</p>
+                                <hr class="dasherHR">
+                                <p class="descriptionSubtitle">8 заданий</p>
+                            </div>
+
+                            <div class="window windowBlue courseAbout" id="course1About">
+                                <div class="notificationNav aboutNav">
+                                    <p class="aboutSubTitle">О курсе</p>
+                                    <div>
+                                        <img src="/img/navItems/hideWhite.png" alt="" class="notificationIcon">
+                                        <img src="/img/navItems/crossWhite.png" alt=""
+                                            class="notificationIcon closeIcon">
+                                    </div>
+
+                                </div>
+                                <div class="windowInfo">
+                                    <div class="windowWrap">
+
+
+                                        <details>
+                                            <summary>> КАКОВА ЦЕЛЬ ЭТОГО КУРСА?</summary>
+                                            <p class="windowText">HTML — язык разметки для структурирования контента на
+                                                странице. Код на HTML говорит браузеру о том, как необходимо отобразить
+                                                информацию.
+                                                CSS — каскадные таблицы стилей, язык, позволяющий менять внешний вид
+                                                HTML-документа.</p>
+                                        </details>
+                                        <details>
+                                            <summary>> НАДО ЛИ МНЕ ЗНАТЬ ЧТО-ТО О ПРОГРАММИРОВАНИИ, ЧТОБЫ ПРОЙТИ КУРС?
+                                            </summary>
+                                            <p class="windowText">Нет, для участия в нашем курсе не требуется никаких
+                                                предварительных знаний о программировании или веб-разработке. Курс
+                                                начинается с основ, так что даже новички смогут усвоить материал.</p>
+                                        </details>
+                                        <details>
+                                            <summary>> КАКОВЫ ВОЗМОЖНОСТИ ПОСЛЕ ОКОНЧАНИЯ КУРСА?</summary>
+                                            <p class="windowText">После окончания курса студенты будут иметь базовые
+                                                знания HTML и CSS, что позволит им создавать простые веб-страницы. Это
+                                                может стать отличной отправной точкой для дальнейшего изучения
+                                                веб-разработки или для создания собственных проектов в интернете.</p>
+                                        </details>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="descriptionItem">
+                                <p class="descriptionTitle">> Посмотреть задания</p>
+                                <hr class="dasherHR">
+                                <a href="tasks_1.html" class="button orangeButton">Перейти</a>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="description hidden" id="course2">
+                            <h1 class="title screenTitle ">#Основы JavaScript</h1>
+
+                            <div class="descriptionItem">
+                                <p class="descriptionTitle">> Что ты освоишь</p>
+                                <hr class="dasherHR">
+                                <p class="descriptionSubtitle">Основы языка, управление потоком выполнения, функции,
+                                    массивы, объекты, работа с событиями, основы работы со строками и числами.</p>
+                            </div>
+
+                            <div class="descriptionItem">
+                                <p class="descriptionTitle">> Сколько заданий</p>
+                                <hr class="dasherHR">
+                                <p class="descriptionSubtitle">8 заданий</p>
+                            </div>
+
+                            <div class="window windowBlue courseAbout" id="course2About">
+                                <div class="notificationNav aboutNav">
+                                    <p class="aboutSubTitle">О курсе</p>
+                                    <div>
+                                        <img src="/img/navItems/hideWhite.png" alt="" class="notificationIcon">
+                                        <img src="/img/navItems/crossWhite.png" alt=""
+                                            class="notificationIcon closeIcon">
+                                    </div>
+
+                                </div>
+                                <div class="windowInfo">
+                                    <div class="windowWrap">
+
+
+                                        <details>
+                                            <summary>> ЧТО ТАКОЕ JavaScript?</summary>
+                                            <p class="windowText">JavaScript - это язык программирования, который
+                                                используется для добавления интерактивности на веб-страницы.
+                                                Он позволяет создавать динамические элементы, обрабатывать
+                                                события пользователя и взаимодействовать с содержимым страницы.</p>
+                                        </details>
+                                        <details>
+                                            <summary>> НАДО ЛИ МНЕ ЗНАТЬ ЧТО-ТО О ПРОГРАММИРОВАНИИ, ЧТОБЫ ПРОЙТИ КУРС?
+                                            </summary>
+                                            <p class="windowText">Хотя опыт в программировании будет полезен,
+                                                для участия в нашем курсе "Основы JavaScript"
+                                                не требуется никаких предварительных знаний.
+                                                Мы начинаем с основ, чтобы дать вам все необходимые навыки.</p>
+                                        </details>
+                                        <details>
+                                            <summary>> КАКОВЫ ВОЗМОЖНОСТИ ПОСЛЕ ОКОНЧАНИЯ КУРСА?</summary>
+                                            <p class="windowText">После окончания курса по основам JavaScript вы сможете
+                                                освоить
+                                                базовые концепции языка, включая работу с переменными,
+                                                условиями, циклами и функциями. Понимать принципы работы с массивами и
+                                                объектами в
+                                                JavaScript. Это обеспечит вам прочные основы для дальнейшего изучения
+                                                JavaScript
+                                                и разработки веб-приложений.</p>
+                                        </details>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="descriptionItem">
+                                <p class="descriptionTitle">> Посмотреть задания</p>
+                                <hr class="dasherHR">
+                                <a href="#" class="button orangeButton">Перейти</a>
+                            </div>
+                        </div>
+
+
+                        <div class="description hidden" id="course3">
+                            <h1 class="title screenTitle ">#PRO JavaScript</h1>
+
+                            <div class="descriptionItem">
+                                <p class="descriptionTitle">> Что ты освоишь</p>
+                                <hr class="dasherHR">
+                                <p class="descriptionSubtitle">пользовательские функции, работа с массивами и объектами,
+                                    условные операторы и циклы, обработка событий и операции над данными.</p>
+                            </div>
+
+                            <div class="descriptionItem">
+                                <p class="descriptionTitle">> Сколько заданий</p>
+                                <hr class="dasherHR">
+                                <p class="descriptionSubtitle">8 заданий</p>
+                            </div>
+
+                            <div class="window windowBlue courseAbout" id="course3About">
+                                <div class="notificationNav aboutNav">
+                                    <p class="aboutSubTitle">О курсе</p>
+                                    <div>
+                                        <img src="/img/navItems/hideWhite.png" alt="" class="notificationIcon">
+                                        <img src="/img/navItems/crossWhite.png" alt=""
+                                            class="notificationIcon closeIcon">
+                                    </div>
+
+                                </div>
+                                <div class="windowInfo">
+                                    <div class="windowWrap">
+
+
+                                        <details>
+                                            <summary>> Что представляет собой курс PRO JavaScript и для кого он
+                                                подходит?</summary>
+                                            <p class="windowText">Курс PRO JavaScript - это продвинутый онлайн-курс,
+                                                направленный на углубление знаний и навыков в области программирования
+                                                на языке JavaScript.
+                                                Он предназначен для тех, кто уже имеет
+                                                базовые знания JavaScript и желает расширить свои компетенции в этой
+                                                области.</p>
+                                        </details>
+                                        <details>
+                                            <summary>> Какие навыки и знания я получу после завершения курса?
+                                            </summary>
+                                            <p class="windowText">После завершения курса PRO JavaScript вы
+                                                приобретете навыки работы с продвинутыми концепциями JavaScript, такими
+                                                как создание
+                                                функций для различных задач, работа с массивами и объектами, обработка
+                                                событий,
+                                                а также знания по работе с числами, строками и условными операторами.
+                                            </p>
+                                        </details>
+                                        <details>
+                                            <summary>> Есть ли какие-то предварительные требования или опыт, необходимые
+                                                для участия в курсе PRO JavaScript?</summary>
+                                            <p class="windowText">Да, для участия в курсе PRO JavaScript рекомендуется
+                                                иметь
+                                                базовые знания JavaScript, такие как понимание основ языка, работа с
+                                                переменными,
+                                                условными операторами и циклами. Это поможет вам
+                                                получить максимальную выгоду от обучения и успешно освоить продвинутые
+                                                концепции.</p>
+                                        </details>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="descriptionItem">
+                                <p class="descriptionTitle">> Посмотреть задания</p>
+                                <hr class="dasherHR">
+                                <a href="/index.html" class="button orangeButton">Перейти</a>
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
+
 
                 <div class="screenButton screenBlue"></div>
             </div>
@@ -204,16 +393,56 @@
 
     <script>
 
-document.addEventListener('DOMContentLoaded', function () {
-  const burgerBtn = document.querySelector('.burger-btn');
-  const menu = document.querySelector('.menu');
+document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll('.button');
+    const closeIcons = document.querySelectorAll('.closeIcon');
 
-  burgerBtn.addEventListener('click', function () {
-    burgerBtn.classList.toggle('open'); // Переключаем класс open у кнопки
-    menu.classList.toggle('show'); // Переключаем класс show у меню
-  });
+    buttons.forEach(button => {
+        button.addEventListener('click', function (event) {
+            const href = this.getAttribute('href'); // Получаем значение атрибута href
+
+            // Проверяем наличие ссылки
+            if (href) {
+                // Перенаправляем пользователя по ссылке
+                window.location.href = href;
+            } else {
+                event.preventDefault();
+
+                const courseId = this.getAttribute('id').replace('button', 'course');
+                const course = document.getElementById(courseId);
+                const windowsWrapper = document.querySelector('.windowsWrapper');
+
+                if (course && windowsWrapper) {
+                    windowsWrapper.style.display = 'none';
+                    course.classList.remove('hidden');
+                }
+            }
+        });
+    });
+
+    closeIcons.forEach(icon => {
+        icon.addEventListener('click', function () {
+            const windowsWrapper = document.querySelector('.windowsWrapper');
+            const course = this.closest('.window');
+
+            if (course && windowsWrapper) {
+                course.parentElement.classList.add('hidden');
+                windowsWrapper.style.display = 'flex';
+            }
+        });
+    });
 });
-        
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const burgerBtn = document.querySelector('.burger-btn');
+            const menu = document.querySelector('.menu');
+
+            burgerBtn.addEventListener('click', function () {
+                burgerBtn.classList.toggle('open'); // Переключаем класс open у кнопки
+                menu.classList.toggle('show'); // Переключаем класс show у меню
+            });
+        });
+
 
 
         $(function () {

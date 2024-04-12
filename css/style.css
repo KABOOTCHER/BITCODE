@@ -43,14 +43,14 @@ html {
     font-size: 24px;
     color: var(--darkPrimaryColor) !important;
 
-    cursor: url('/img/cur/cursor_default.png'), auto !important;
+    cursor: url('/img/cursorImages/cursor_default.png'), auto !important;
 
 }
 
 a:hover,
 button:hover,
 input:hover {
-    cursor: url('/img/cur/cursor_pointer.png'), auto !;
+    cursor: url('/img/cursorImages/cursor_pointer.png'), auto !;
 }
 
 
@@ -545,7 +545,7 @@ header {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    padding: 6.5rem 4.6rem;
+    padding: 5.5rem 4.6rem;
 
     gap: .5rem;
 }
@@ -566,17 +566,17 @@ header {
 }
 
 
-#orangeDisk {
+.orangeDisk {
     background-image: url(/img/diskettes/orange.png);
 
 }
 
-#purpleDisk {
+.purpleDisk {
     background-image: url(/img/diskettes/violet.png);
 
 }
 
-#blueDisk {
+.blueDisk {
     background-image: url(/img/diskettes/blue.png);
 
 }
@@ -774,7 +774,13 @@ label {
     max-width: 50%;
 }
 
+.container-center{
+    display: flex;
+    width: 100%;
 
+    justify-content: center;
+    align-items: center;
+}
 
 
 
@@ -955,7 +961,7 @@ label {
       }
 }
 
-@media (max-width:720px) {
+@media (max-width:500px) {
     .window{
         width: 90%;
     }
