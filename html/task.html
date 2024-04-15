@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/noise.css">
+    <link rel="stylesheet" href="/css/header.css">
+
+    <link rel="stylesheet" href="/css/task.css">
+
+
+    <title>BITCODE - Задание</title>
+</head>
+
+<header>
+    <div class="burger-btn">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <div class="menu">
+        <ul>
+            <li><a href="/index.html">Главная</a></li>
+            <li><a href="courses.html">Курсы</a></li>
+            <li><a href="#">Песочница</a></li>
+            <li><a href="#">Справочник</a></li>
+            <li><a href="#">О нас</a></li>
+        </ul>
+    </div>
+
+</header>
+
+<body>
+
+    <main class="main">
+        <h1 class="logo title" id="PClogo" data-text="BITCODE">BITCODE</h1>
+        <div class="heroWrap">
+            <video style="filter:grayscale(1)" src="/bgVid.mp4" width="100%" loop muted autoplay></video>
+            <div class="tv-screen tv-screen-content noise-effect heroBlock">
+                <div class="aboutBlock" id="smallAbout">
+                    <h1 class="logo title" id="mobLogo" data-text="BITCODE">BITCODE</h1>
+                    <div class="wrap">
+                        <h1 id="taskTitle" class="title glowFillTitle taskTitle" data-text="#Название задания">#Базовый ХМЛ</h1>
+                        <h2 class="subTitle">Испытание твоих навыков</h2>
+                        <img src="/img/stickers/pc.png" alt="" class="aboutImg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="aboutBlock" id="wideAbout">
+            <div class="wrap">
+                <h1 id="taskTitle" class="title glowFillTitle taskTitle" data-text="#Название задания">#Название HTML</h1>
+                <h2 class="subTitle">Испытание твоих навыков</h2>
+            </div>
+        </div>
+        <div class="taskBlock">
+            <div class="taskWrapper">
+                <p id="taskDescription" class="text">
+                    Описание задания Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nemo cupiditate numquam impedit voluptas, veniam aspernatur minima quae assumenda aliquid laborum.
+                </p>
+                <div class="taskButtons">
+                    <a href="#Positioning" class="button lightBlueButton">Предыдущее задание</a>
+                    <a href="#BaseCSS" class="button lightBlueButton">Следующее задание</a>
+                </div>
+            </div>
+            <img src="/img/stickers/pc.png" alt="">
+        </div>
+        <div class="pcBlock">
+            <div>
+                <h1 class="title glowEmptyTitle" data-text="#ТВОЙ КОД">#ТВОЙ КОД</h1>
+            
+            <div class="screenBorder">
+                <div id="userScreen" class="screen tv-screen tv-screen-content noise-effect whiteScreen">
+                    <div id="htmlArea" class="inputArea">
+                        <textarea name="html" id="htmlInput"></textarea>
+                    </div>
+                    <div id="cssArea" class="inputArea hidden">
+                        <textarea name="css" id="cssInput"></textarea>
+                    </div>
+                    <div id="jsArea" class="inputArea hidden">
+                        <textarea name="JS" id="jsInput"></textarea>
+                    </div>
+                </div>
+                <div class="screenButtonsWrapper">
+                    <div>
+                        <div id="screenOrange" class="screenButton"></div>HTML
+                    </div>
+                    <div>
+                        <div id="screenBlue" class="screenButton"></div>CSS
+                    </div>
+                    <div>
+                        <div id="screenYellow" class="screenButton"></div>JS
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div>
+            <h1 class="title glowEmptyTitle" data-text="#ВЫВОД">#ВЫВОД</h1>
+        
+
+
+            <div class="screenBorder">
+                <div id="resultBlock" class="screen tv-screen tv-screen-content noise-effect whiteScreen">
+                    <iframe class="hidden" id="resultScreen"></iframe>
+                    <h1 id="resultEmptyTitle" class="title screenTitle">#NO_SIGNAL</h1>
+                </div>
+                <div class="screenButtonsWrapper" style="flex-direction: row-reverse;">
+                    
+                    <div>
+                        <div id="screenBlue"  class="screenButton"></div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+    
+
+    <footer class="footer">
+        <div class="footerWrap">
+            <div class="footerNavBlock">
+                <a href="#" class="logoFooter">BITCODE</a>
+                <div class="footerButtons">
+                    <a href="#" class="button orangeWhiteButton">Главная</a>
+                    <a href="#" class="button orangeWhiteButton">О нас</a>
+                    <a href="#" class="button orangeWhiteButton">Курсы</a>
+                    <a href="#" class="button orangeWhiteButton">Контакты</a>
+                    <a href="#" class="button orangeWhiteButton">Задания</a>
+                    <a href="#" class="button orangeWhiteButton">Песочница</a>
+                </div>
+            </div>
+
+            <div class="footerContactBlock">
+                <form class="blackForm" action="#">
+                    <label for="contactEmail">Подписаться на обновления...</label>
+                    <input type="email" name="contactEmail" id="contactEmailField" placeholder="Ваш адрес эл.почты">
+                    <input class="button orangeWhiteButton" id="emailSendButton" type="button" value="Отправить ->">
+                </form>
+
+                <img src="/img/stickers/disk.png" alt="">
+            </div>
+
+        </div>
+
+        <div class="copyright button whiteButton">2024</div>
+    </footer>
+
+
+    <script src="/js/stroke.js"></script>
+    <script src="/js/compiler.js"></script>
+    <script src="/js/task-1.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+
+
+
+
+    <script>
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const burgerBtn = document.querySelector('.burger-btn');
+            const menu = document.querySelector('.menu');
+
+            burgerBtn.addEventListener('click', function () {
+                burgerBtn.classList.toggle('open'); // Переключаем класс open у кнопки
+                menu.classList.toggle('show'); // Переключаем класс show у меню
+            });
+        });
+
+
+
+
+
+    </script>
+
+
+</script>
+
+</body>
+
+</html>

@@ -11,8 +11,8 @@
     --bg-color-start: rgba(26, 26, 26, .7);
     --bg-color-end: rgba(8, 8, 8, 1);
 
-    --bg-color-light-start: rgba(26, 26, 26, 0.5);
-    --bg-color-light-end: rgba(8, 8, 8, 0.2);
+    --bg-color-light-start: rgba(255, 255, 255, 1);
+    --bg-color-light-end: rgba(200, 200, 200, .5);
 
     color-scheme: dark;
 }
@@ -153,7 +153,7 @@ header {
 
     letter-spacing: .3rem;
     text-transform: uppercase;
-
+    align-self: stretch;
     margin-bottom: 1rem;
 }
 
@@ -275,7 +275,31 @@ header {
 
 
 
+
+.taskBlock {
+    width: fit-content;
+    margin: 0 5%;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+.taskBlock .text {
+    width: 90%;
+    height: -webkit-fill-available;
+}
+
+
+
 /*------BUTTONS----*/
+
+
+.taskButtons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
 
 
 .button {
@@ -288,6 +312,8 @@ header {
     font-size: 1.5rem;
     padding: .2rem 1.5rem;
     margin-top: 1rem;
+
+    text-wrap:nowrap;
 }
 
 .bigButton {
@@ -350,7 +376,10 @@ header {
 }
 
 
+.lightBlueButton{
+    background-color: var(--lightBlueColor);
 
+}
 
 
 
@@ -377,6 +406,7 @@ header {
 
 .heroBlock h2 {
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 
@@ -537,23 +567,25 @@ header {
 
 
 
-.advantage {
+
+.advantage{
     position: relative;
     background-repeat: no-repeat;
-    /* width: -webkit-fill-available; */
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    padding: 5.5rem 4.6rem;
+    height: 10rem;
+    height: max-content;
 
-    gap: .5rem;
+    background-size: contain;
+
 }
 
 
 
 .advantageWrap {
-    margin-top: 4rem;
+    margin: 4rem 0;
     display: flex;
     flex-direction: row;
     gap: 2rem;
@@ -581,9 +613,12 @@ header {
 
 }
 
+.diskText{
+    width: inherit;
+}
 
 .screenBorder {
-    margin: 0 12%;
+    margin: 0 15%;
     position: relative;
     background-color: var(--lightPrimaryColor);
 
@@ -613,6 +648,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 
 
 }
@@ -699,8 +735,14 @@ input {
     margin-top: 0.5rem;
 }
 
-.screenBlue {
+#screenBlue {
     background-color: var(--brightBlueColor);
+}
+#screenOrange {
+    background-color: var(--orangeColor);
+}
+#screenYellow {
+    background-color: var(--yellowColor);
 }
 
 
@@ -729,7 +771,7 @@ input {
 
 
 .logoFooter {
-    font-size: 2rem;
+    font-size: 5rem;
     font-family: "Adventure";
 
 
@@ -784,11 +826,29 @@ label {
 
 
 
-@media (min-width:1201px) {
-    .aboutBlock {
-        justify-content: center;
-    }
 
+/* Стиль свечения для кнопки HTML */
+.glow-orange {
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.8); /* Оранжевая тень */
+    transition: box-shadow 0.2s ease-in-out; /* Плавная анимация */
+}
+
+/* Стиль свечения для кнопки CSS */
+.glow-blue {
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.8); /* Синяя тень */
+    transition: box-shadow 0.2s ease-in-out; /* Плавная анимация */
+}
+
+/* Стиль свечения для кнопки JS */
+.glow-yellow {
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.8); /* Желтая тень */
+    transition: box-shadow 0.2s ease-in-out; /* Плавная анимация */
+}
+
+/* Стиль свечения при наведении */
+.screenButton:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Белая тень */
+    transition: box-shadow 0.2s ease-in-out; /* Плавная анимация */
 }
 
 
@@ -799,7 +859,7 @@ label {
 
 
     .title {
-        
+        font-size: 2rem;
         text-wrap: wrap;
     }
 
@@ -839,6 +899,18 @@ label {
 
 
 @media (max-width:800px) {
+
+    .logoFooter{
+        font-size: 3rem;
+    }
+
+    .advantage{
+       
+        height: 10rem;
+   
+        background-size: contain;
+        word-break: break-all;
+    }
     
     .wayBlock{
         display: none;
@@ -879,9 +951,7 @@ label {
         letter-spacing: .2rem;
         font-weight: 600;
     }
-    .bigButton, .title{
-        font-size: 1.5rem;
-    }
+
 
     .title{
         text-align: left;
@@ -965,4 +1035,14 @@ label {
     .window{
         width: 90%;
     }
+    .bigButton, .title{
+        font-size: 1.5rem;
+    }
+}
+@media (max-width:380px) {
+    .footerButtons{
+        grid-template-columns: none;
+        gap: unset;
+    }
+
 }

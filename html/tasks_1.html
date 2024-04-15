@@ -82,17 +82,18 @@
         <div class="pcBlock">
 
             <div class="screenBorder">
-                <div class="screen tv-screen tv-screen-content noise-effect">
+                <div class="screen tv-screen tv-screen-content noise-effect whiteScreen">
                     <h1 class="title screenTitle">#NO_SIGNAL</h1>
 
                 </div>
-                <div class="screenButton screenBlue"></div>
+                <div id="screenBlue" class="screenButton glow-blue"></div>
             </div>
 
             <div class="floppyBlock">
                 <div class="floppyTitleBlock">
                     <h2 class="floppyTitle">Вставьте <br> дискету</h2>
                 </div>
+                <img src="/img/stickers/ejectButton.png" alt="" id="ejectButton">
 
                 <hr class="floppyLine">
             </div>
@@ -109,48 +110,32 @@
                 </div>
                 <div class="windowInfo">
 
+                    
+                    <img class="advantage" draggable="true" data-title="Основы HTML"
+                        data-description="Тебе будет нужно создать базовую веб-страницу, содержащую несколько элементов"
+                        src="/img/diskettes/task1Disk/task01.png" alt="BaseHTML" id="BaseHTML">
+                    <img class="advantage" draggable="true" data-title="Основы CSS"
+                        data-description="Добавив несколько элементов, попробуй задать им уникальный внешний вид"
+                        src="/img/diskettes/task1Disk/task02.png" alt="BaseCSS" id="BaseCSS">
+                    <img class="advantage" draggable="true" data-title="Текст"
+                        data-description="Научись стилизовать текстовые блоки"
+                        src="/img/diskettes/task1Disk/task03.png" alt="TextForm" id="TextForm">
+                    <img class="advantage" draggable="true" data-title="Ссылки"
+                        data-description="Создай несколько ссылок и научись взаимодействовать с ними"
+                        src="/img/diskettes/task1Disk/task04.png" alt="Links" id="Links">
+                    <img class="advantage" draggable="true" data-title="Изображения"
+                        data-description="Простое задание которое нацелено на работу с тегом <img>"
+                        src="/img/diskettes/task1Disk/task05.png" alt="Pictures" id="Pictures">
+                    <img class="advantage" draggable="true" data-title="Списки"
+                        data-description="Ты создашь свой список покупок и научишься изменять его дочерние блоки"
+                        src="/img/diskettes/task1Disk/task06.png" alt="Lists" id="Lists">
+                    <img class="advantage" draggable="true" data-title="Разметка блоков"
+                        data-description="Ты освоишь вёрстку при помощи GRID и FLEXBOX. Это поможет тебе позиционировать блоки"
+                        src="/img/diskettes/task1Disk/task07.png" alt="MarkUp" id="MarkUp">
+                    <img class="advantage" draggable="true" data-title="Позиция"
+                        data-description="В этом задании ты узнаешь что такое Position в css и как его использовать"
+                        src="/img/diskettes/task1Disk/task08.png" alt="Positioning" id="Positioning">
 
-
-
-                    <div draggable="true" class="advantage orangeDisk" id="BaseHTML">
-                        <p class="diskText">Основы HTML</p>
-                        <img src="img/disketteSigns/247.png" alt="">
-                    </div>
-
-                    <div draggable="true" class="advantage purpleDisk" id="BaseCSS">
-                        <p class="diskText">Основы CSS</p>
-                        <img src="img/disketteSigns/endless.png" alt="">
-                    </div>
-
-                    <div draggable="true" class="advantage blueDisk" id="TextForm">
-                        <p class="diskText">Форматирование текста</p>
-                        <img src="img/disketteSigns/lamp.png" alt="">
-                    </div>
-
-                    <div draggable="true" class="advantage orangeDisk" id="Links">
-                        <p class="diskText">Ссылки</p>
-                        <img src="img/disketteSigns/247.png" alt="">
-                    </div>
-
-                    <div draggable="true" class="advantage purpleDisk" id="Pictures">
-                        <p class="diskText">Изображения</p>
-                        <img src="img/disketteSigns/endless.png" alt="">
-                    </div>
-
-                    <div draggable="true" class="advantage blueDisk" id="Lists">
-                        <p class="diskText">Списки</p>
-                        <img src="img/disketteSigns/lamp.png" alt="">
-                    </div>
-
-                    <div draggable="true" class="advantage orangeDisk" id="MarkUp">
-                        <p class="diskText">Разметка блоков</p>
-                        <img src="img/disketteSigns/247.png" alt="">
-                    </div>
-
-                    <div draggable="true" class="advantage purpleDisk" id="Positioning">
-                        <p class="diskText">Позиционирование</p>
-                        <img src="img/disketteSigns/endless.png" alt="">
-                    </div>
 
 
                 </div>
@@ -160,7 +145,7 @@
             </div>
         </div>
         </div>
-        <button id="ejectButton">EJECT</button>
+
 
 
 
@@ -200,80 +185,14 @@
 
 
     <script src="/js/stroke.js"></script>
+    <script src="/js/dragANDdrop.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.5.0/jquery.marquee.min.js"></script>
 
 
 
-<script>
- document.addEventListener("DOMContentLoaded", function() {
-    const floppyBlock = document.querySelector(".floppyLine");
-    const screenTitle = document.querySelector(".screenTitle");
-    const ejectButton = document.getElementById("ejectButton");
-    let originalState = null; // переменная для хранения исходного состояния
 
-    // Функция для возвращения к исходному состоянию
-    function restoreOriginalState() {
-        if (originalState) {
-            document.querySelector(".windowInfo").innerHTML = originalState;
-            const advantages = document.querySelectorAll(".advantage");
-            advantages.forEach(advantage => {
-                advantage.addEventListener("dragstart", dragStart);
-            });
-        }
-
-        // Удаление присоединенных блоков advantage из floppyLine
-        const attachedAdvantages = document.querySelectorAll(".floppyLine .advantage");
-        attachedAdvantages.forEach(advantage => {
-            advantage.remove();
-        });
-
-        screenTitle.textContent = "Window Info";
-    }
-
-    // Сохраняем исходное состояние при загрузке страницы
-    originalState = document.querySelector(".windowInfo").innerHTML;
-
-    // Обработчик нажатия на кнопку EJECT
-    ejectButton.addEventListener("click", function() {
-        restoreOriginalState();
-    });
-
-    // Обработчик события для перемещения блоков
-    function dragStart(event) {
-        event.dataTransfer.setData("text/plain", event.target.id);
-    }
-
-    // Обработчик события для предотвращения действия по умолчанию при перетаскивании
-    function dragOver(event) {
-        event.preventDefault();
-    }
-
-    // Обработчик события для перетаскивания и добавления блока в floppyLine
-    function drop(event) {
-        event.preventDefault();
-        const data = event.dataTransfer.getData("text/plain");
-        const draggedElement = document.getElementById(data);
-
-        if (event.target.classList.contains("floppyLine")) {
-            event.target.appendChild(draggedElement);
-            const advantageId = draggedElement.id;
-            screenTitle.textContent = advantageId.toUpperCase();
-        }
-    }
-
-    // Добавляем обработчики событий для блоков advantage
-    const advantages = document.querySelectorAll(".advantage");
-    advantages.forEach(advantage => {
-        advantage.addEventListener("dragstart", dragStart);
-    });
-
-    // Добавляем обработчики событий для floppyLine
-    floppyBlock.addEventListener("dragover", dragOver);
-    floppyBlock.addEventListener("drop", drop);
-});
-</script>
 
 
     <script>

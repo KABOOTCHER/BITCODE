@@ -1,27 +1,36 @@
-:root {
-    --darkPrimaryColor: #333533;
-    --lightPrimaryColor: #FFFEDA;
-    --brightBlueColor: #001AFF;
-    --whiteColor: #ffffff;
-    --orangeColor: #FF8049;
-    --lightBlueColor: #00AEC7;
-    --yellowColor: #FCCB30;
-    --purpleColor: #C980DA;
-
-    --bg-color-start: rgba(26, 26, 26, .7);
-    --bg-color-end: rgba(8, 8, 8, 1);
-
-    --bg-color-light-start: rgba(26, 26, 26, 0.5);
-    --bg-color-light-end: rgba(8, 8, 8, 0.2);
-
-    color-scheme: dark;
-}
 
 
 .screen{
+width: 50vw;
+    aspect-ratio: 3/1;
+
     padding: 5rem 1rem;
+    gap: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 
 }
+
+.screenTitle{
+    align-self: center;
+    word-break: break-word;
+}
+
+.screen p{
+    width: 80%;
+    margin-left: 5%;
+    color:var(--brightBlueColor);
+    font-family: "Thintel";
+    font-size: 2rem;
+    line-height: 1.2rem;
+}
+.screen a{
+    margin-left: 5%;
+}
+
+
+
 
 .pcBlock{
     display: flex;
@@ -103,18 +112,55 @@
     border-radius: 1rem;
 }
 
+.advantage{
+
+width: auto;
+}
+
+.window{
+    margin-top: 5rem;
+}
+
+.floppyLine > .advantage{
+    margin-bottom: 2rem;
+}
+
+#ejectButton{
+    align-self: flex-end;
+}
+
+.biggerTitle{
+    font-size: 2rem !important;
+}
 
 
+
+
+@media(max-width:1300px){
+    .screenTitle{
+        font-size: 2.5rem;
+    }
+}
 
 @media (max-width:1050px) {
+
+    .screen{
+        height: 30vh;
+        width: -webkit-fill-available;
+    }
+
     .pcBlock{
         margin-top: 5rem;
         flex-wrap: wrap;
 
     }
+    
+
     .screenBorder{
-        width: 100%;
+        max-width: 90%;
     }
+
+
 }
 
 
@@ -125,4 +171,35 @@
     }
 
 
+
+}
+@media (max-width:800px) {
+    .pcBlock{
+
+        padding: 0;
+    }
+
+
+    .screen p{
+        width: 100%;
+        line-height: 1.5rem;
+        background-color: rgba(8, 8, 8, 0.2);
+        backdrop-filter: blur(50%);
+        padding: 1rem;
+        margin: 0;
+    }
+    .floppyBlock{
+        min-width: 55vw;
+    }
+    .advantage{
+        height: 50vw;
+        padding: 0;
+    }
+
+}
+
+@media (max-width:500px) {
+    .title{
+        font-size: 1rem;
+    }
 }

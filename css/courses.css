@@ -1,21 +1,4 @@
-:root {
-    --darkPrimaryColor: #333533;
-    --lightPrimaryColor: #FFFEDA;
-    --brightBlueColor: #001AFF;
-    --whiteColor: #ffffff;
-    --orangeColor: #FF8049;
-    --lightBlueColor: #00AEC7;
-    --yellowColor: #FCCB30;
-    --purpleColor: #C980DA;
 
-    --bg-color-start: rgba(26, 26, 26, .7);
-    --bg-color-end: rgba(8, 8, 8, 1);
-
-    --bg-color-light-start: rgba(26, 26, 26, 0.5);
-    --bg-color-light-end: rgba(8, 8, 8, 0.2);
-
-    color-scheme: dark;
-}
 
 .screenTitle {
     margin-bottom: 2rem;
@@ -39,7 +22,7 @@
 
 
 .tv-screen-content{
-    -webkit-filter: brightness(0.9) contrast(1.1);
+  -webkit-filter: brightness(1) contrast(1.3);
 
 
 }
@@ -252,6 +235,7 @@ details{
     }
 
     .windowsWrapper{
+      padding: 0 10%;
         overflow-x: auto;
         flex-wrap: nowrap;
         width: -webkit-fill-available;
