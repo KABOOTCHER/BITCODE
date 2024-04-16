@@ -1,176 +1,124 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/fonts.css">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/noise.css">
-    <link rel="stylesheet" href="/css/header.css">
-
-    <title>BITCODE - Главная</title>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<link href="/css/fonts.css" rel="stylesheet">
+	<link href="/css/normalize.css" rel="stylesheet">
+	<link href="/css/style.css" rel="stylesheet">
+	<link href="/css/noise.css" rel="stylesheet">
+	<link href="/css/header.css" rel="stylesheet">
+	<title>BITCODE - Главная</title>
 </head>
-<header>
-    <div class="burger-btn">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-
-<div class="menu">
-  <ul>
-    <li><a href="index.html">Главная</a></li>
-    <li><a href="/html/courses.html">Курсы</a></li>
-    <li><a href="#">Песочница</a></li>
-    <li><a href="#">Справочник</a></li>
-    <li><a href="#">О нас</a></li>
-  </ul>
-</div>
-
-</header>
 <body>
-    <main class="main">
-        <h1 class="logo title" id="PClogo" data-text="BITCODE">BITCODE</h1>
-        <div class="heroWrap">
-            <video style="filter:grayscale(1)" src="/bgVid.mp4" width="100%" loop muted autoplay></video>
+	<header>
+		<div class="burger-btn">
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+		</div>
+		<div class="menu">
+			<ul>
+				<li>
+					<a href="index.html">Главная</a>
+				</li>
+				<li>
+					<a href="/html/courses.html">Курсы</a>
+				</li>
+				<li>
+					<a href="#">Песочница</a>
+				</li>
+				<li>
+					<a href="#">Справочник</a>
+				</li>
+				<li>
+					<a href="#">О нас</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<main class="main">
+		<h1 class="logo title" data-text="BITCODE" id="PClogo">BITCODE</h1>
+		<div class="heroWrap">
+			<video autoplay="" loop="" src="/bgVid.mp4" style="filter:grayscale(1)" width="100%"></video>
+			<div class=" tv-screen tv-screen-content noise-effect heroBlock">
+				<div class="aboutBlock" id="smallAbout">
+				<h1 class="logo title" data-text="BITCODE" id="mobLogo">BITCODE</h1>
+				<div class="wrap">
+					<h1 class="title glowFillTitle" data-text="#О НАС">#О НАС</h1>
+					<h2 class="subTitle">Сделай свой выбор</h2>
+				</div><img alt="" class="aboutImg" src="/img/stickers/stars.png"></div>
+			</div>
+		</div>
+		<div class="aboutBlock" id="wideAbout">
+			<div class="wrap">
+				<h1 class="title glowFillTitle" data-text="#О НАС">#О НАС</h1>
+				<h2 class="subTitle">Сделай свой выбор</h2>
+			</div>
+		</div>
+		<div class="taskBlock">
+		<div class="taskWrapper">
+			<p class="text" id="taskDescription">Приветствуем тебя в мире BITCODE - твоего надежного проводника в увлекательную среду веб-программирования с элементами стиля ретро!</p>
+		</div><img alt="" src="/img/stickers/pc.png"></div>
+		<div class="advantagesBlock">
+			<h1 class="title glowEmptyTitle" data-text="#Что ты получишь">#Что ты получишь</h1>
+			<div class="advantageContainer">
+				<div class="advantageWrap"><img alt="" class="advantage" src="/img/diskettes/schoolPriority/01.png"> <img alt="" class="advantage" src="/img/diskettes/schoolPriority/02.png"> <img alt="" class="advantage" src="/img/diskettes/schoolPriority/03.png"></div>
+			</div>
+		</div>
+	</main>
+	<footer class="footer">
+		<div class="footerWrap">
+			<div class="footerNavBlock">
+				<a class="logoFooter" href="#">BITCODE</a>
+				<div class="footerButtons">
+					<a class="button orangeWhiteButton" href="#">Главная</a> <a class="button orangeWhiteButton" href="#">О нас</a> <a class="button orangeWhiteButton" href="#">Курсы</a> <a class="button orangeWhiteButton" href="#">Контакты</a> <a class="button orangeWhiteButton" href="#">Задания</a> <a class="button orangeWhiteButton" href="#">Песочница</a>
+				</div>
+			</div>
+			<div class="footerContactBlock">
+			<form action="#" class="blackForm">
+				<label for="contactEmail">Подписаться на обновления...</label> <input id="contactEmailField" name="contactEmail" placeholder="Ваш адрес эл.почты" type="email"> <input class="button orangeWhiteButton" id="emailSendButton" type="button" value="Отправить -&gt;">
+			</form><img alt="" src="/img/stickers/disk.png"></div>
+		</div>
+		<div class="copyright button whiteButton">
+			2024
+		</div>
+	</footer>
+	<script src="/js/stroke.js">
+	</script> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+	</script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.5.0/jquery.marquee.min.js">
+	</script> 
+	<script>
 
-            <div class="  tv-screen tv-screen-content noise-effect  heroBlock ">
+	document.addEventListener('DOMContentLoaded', function () {
+	 const burgerBtn = document.querySelector('.burger-btn');
+	 const menu = document.querySelector('.menu');
 
-
-
-                <div class="aboutBlock" id="smallAbout">
-                    <h1 class="logo title" id="mobLogo" data-text="BITCODE">BITCODE</h1>
-                    <div class="wrap">
-                        <h1 class="title glowFillTitle" data-text="#О НАС">#О НАС</h1>
-                        <h2 class="subTitle">Сделай свой выбор</h2>
-
-                    </div>
-
-                    <img src="/img/stickers/stars.png" alt="" class="aboutImg">
-
-
-                </div>
-
-            </div>
-        </div>
-
-
-
-
-        <div class="aboutBlock" id="wideAbout">
-
-            <div class="wrap">
-                <h1 class="title glowFillTitle" data-text="#О НАС">#О НАС</h1>
-                <h2 class="subTitle">Сделай свой выбор</h2>
-
-            </div>
-
-
-
-
-        </div>
-
-        <div class="taskBlock">
-            <div class="taskWrapper">
-                <p id="taskDescription" class="text">
-                    Приветствуем тебя в мире BITCODE - твоего надежного проводника в увлекательную среду
-                     веб-программирования с элементами стиля ретро!
-                </p>
-                
-            </div>
-            <img src="/img/stickers/pc.png" alt="">
-        </div>
-       
-        
-
-        <div class="advantagesBlock">
-            <h1 class="title glowEmptyTitle" data-text="#Что ты получишь">#Что ты получишь</h1>
-            <div class="advantageContainer">
-                <div class="advantageWrap">
-                  <img src="/img/diskettes/schoolPriority/01.png" alt="" class="advantage">
-                  <img src="/img/diskettes/schoolPriority/02.png" alt="" class="advantage">
-                  <img src="/img/diskettes/schoolPriority/03.png" alt="" class="advantage">
-              
-                
-                </div>
-              </div>
-
-        </div>
-
-
-
-
-
-    </main>
-
-    <footer class="footer">
-        <div class="footerWrap">
-            <div class="footerNavBlock">
-                <a href="#" class="logoFooter">BITCODE</a>
-                <div class="footerButtons">
-                    <a href="#" class="button orangeWhiteButton">Главная</a>
-                    <a href="#" class="button orangeWhiteButton">О нас</a>
-                    <a href="#" class="button orangeWhiteButton">Курсы</a>
-                    <a href="#" class="button orangeWhiteButton">Контакты</a>
-                    <a href="#" class="button orangeWhiteButton">Задания</a>
-                    <a href="#" class="button orangeWhiteButton">Песочница</a>
-                </div>
-            </div>
-
-            <div class="footerContactBlock">
-                <form class="blackForm" action="#">
-                    <label for="contactEmail">Подписаться на обновления...</label>
-                    <input type="email" name="contactEmail" id="contactEmailField" placeholder="Ваш адрес эл.почты">
-                    <input class="button orangeWhiteButton" id="emailSendButton" type="button" value="Отправить ->">
-                </form>
-
-                <img src="/img/stickers/disk.png" alt="">
-            </div>
-
-        </div>
-
-        <div class="copyright button whiteButton">2024</div>
-    </footer>
+	 burgerBtn.addEventListener('click', function () {
+	   burgerBtn.classList.toggle('open'); // Переключаем класс open у кнопки
+	   menu.classList.toggle('show'); // Переключаем класс show у меню
+	 });
+	});
+	       
 
 
-    <script src="/js/stroke.js"></script>
+	       $(function () {
+	           $('.marqLine').marquee({
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.5.0/jquery.marquee.min.js"></script>
+	               direction: 'left',
 
-    <script>
+	               duplicated: true,
 
-document.addEventListener('DOMContentLoaded', function () {
-  const burgerBtn = document.querySelector('.burger-btn');
-  const menu = document.querySelector('.menu');
+	               duration: 10000,
 
-  burgerBtn.addEventListener('click', function () {
-    burgerBtn.classList.toggle('open'); // Переключаем класс open у кнопки
-    menu.classList.toggle('show'); // Переключаем класс show у меню
-  });
-});
-        
+	               startVisible: true
+	               
+	           });
+	       });
 
 
-        $(function () {
-            $('.marqLine').marquee({
-
-                direction: 'left',
-
-                duplicated: true,
-
-                duration: 10000,
-
-                startVisible: true
-                
-            });
-        });
-
-
-    </script>
-    
+	</script>
 </body>
-
 </html>

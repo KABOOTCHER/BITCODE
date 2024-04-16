@@ -1,1048 +1,755 @@
 :root {
-    --darkPrimaryColor: #333533;
-    --lightPrimaryColor: #FFFEDA;
-    --brightBlueColor: #001AFF;
-    --whiteColor: #ffffff;
-    --orangeColor: #FF8049;
-    --lightBlueColor: #00AEC7;
-    --yellowColor: #FCCB30;
-    --purpleColor: #C980DA;
-
-    --bg-color-start: rgba(26, 26, 26, .7);
-    --bg-color-end: rgba(8, 8, 8, 1);
-
-    --bg-color-light-start: rgba(255, 255, 255, 1);
-    --bg-color-light-end: rgba(200, 200, 200, .5);
-
-    color-scheme: dark;
+	--darkPrimaryColor: #333533;
+	--lightPrimaryColor: #FFFEDA;
+	--brightBlueColor: #001AFF;
+	--whiteColor: #ffffff;
+	--orangeColor: #FF8049;
+	--lightBlueColor: #00AEC7;
+	--yellowColor: #FCCB30;
+	--purpleColor: #C980DA;
+	--bg-color-start: rgba(26, 26, 26, .7);
+	--bg-color-end: rgba(8, 8, 8, 1);
+	--bg-color-light-start: rgba(255, 255, 255, 1);
+	--bg-color-light-end: rgba(200, 200, 200, .5);
+	color-scheme: dark;
 }
-
 * {
-
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
-
 a {
-    text-decoration: none;
-    color: var(--whiteColor);
+	text-decoration: none;
+	color: var(--whiteColor);
 }
-
-
-
 html {
-
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
-    background-color: var(--darkPrimaryColor);
-
-    background-image: radial-gradient(rgba(0, 0, 0, 0.5) 6px, transparent 6px);
-    background-size: 70px 70px;
-    /* Размер кружков */
-
-    font-size: 24px;
-    color: var(--darkPrimaryColor) !important;
-
-    cursor: url('/img/cursorImages/cursor_default.png'), auto !important;
-
+	overflow-x: hidden !important;
+	overflow-y: auto !important;
+	background-color: var(--darkPrimaryColor);
+	background-image: radial-gradient(rgba(0, 0, 0, 0.5) 6px, transparent 6px);
+	background-size: 70px 70px;
+	/* Размер кружков */
+	font-size: 24px;
+	color: var(--darkPrimaryColor) !important;
+	cursor: url('/img/cursorImages/cursor_default.png'), auto !important;
 }
-
 a:hover,
 button:hover,
 input:hover {
-    cursor: url('/img/cursorImages/cursor_pointer.png'), auto !;
+	cursor: url('/img/cursorImages/cursor_pointer.png'), auto !;
 }
-
-
 /*------------ NAV BURGER BUTTON */
 
 header {
-    position: fixed;
-    top: 10%;
-    z-index: 50;
-    left: 5%;
-
-    border: 3px solid var(--lightBlueColor);
-    border-radius: 10px;
-
-    padding: 10px;
-
-    background: var(--bg-color-start);
-    backdrop-filter: blur(6px);
+	position: fixed;
+	top: 10%;
+	z-index: 50;
+	left: 5%;
+	border: 3px solid var(--lightBlueColor);
+	border-radius: 10px;
+	padding: 10px;
+	background: var(--bg-color-start);
+	backdrop-filter: blur(6px);
 }
-
-
 .menu {
-    display: none;
-
+	display: none;
 }
-
 .menu.show {
-    display: block;
+	display: block;
 }
-
 .menu ul {
-    list-style-type: none;
-    padding: 0;
+	list-style-type: none;
+	padding: 0;
 }
-
 .menu li {
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 }
-
 .burger-btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
 }
-
 .line {
-    width: 100%;
-    height: 3px;
-    background-color: var(--lightBlueColor);
-    transition: all 0.3s ease;
+	width: 100%;
+	height: 3px;
+	background-color: var(--lightBlueColor);
+	transition: all 0.3s ease;
 }
-
 .burger-btn.open .line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+	transform: rotate(45deg) translate(5px, 5px);
 }
-
 .burger-btn.open .line:nth-child(2) {
-    opacity: 0;
+	opacity: 0;
 }
-
 .burger-btn.open .line:nth-child(3) {
-    transform: rotate(-45deg) translate(10px, -10px);
+	transform: rotate(-45deg) translate(10px, -10px);
 }
-
-
 /*-------BASE TEXT STYLES---------*/
 
-
 .title {
-    font-size: 3rem;
-    font-family: "Adventure";
-
-    text-transform: uppercase;
-
-    text-wrap: nowrap;
-    letter-spacing: .5rem;
-
+	font-size: 3rem;
+	font-family: "Adventure";
+	text-transform: uppercase;
+	text-wrap: nowrap;
+	letter-spacing: .5rem;
 }
-
 .logo {
-    font-size: 4.5rem;
-    color: var(--darkPrimaryColor);
-
-
-    text-shadow:
-        var(--lightBlueColor) 0 0 3rem;
-
-    letter-spacing: .5rem;
+	font-size: 4.5rem;
+	color: var(--darkPrimaryColor);
+	text-shadow: var(--lightBlueColor) 0 0 3rem;
+	letter-spacing: .5rem;
 }
-
 .subTitle {
-    color: var(--lightPrimaryColor);
-    font-family: "Alumni Sans";
-    font-weight: bold;
-    font-style: italic;
-    font-size: 2.5rem;
-
-    letter-spacing: .3rem;
-    text-transform: uppercase;
-    align-self: stretch;
-    margin-bottom: 1rem;
+	color: var(--lightPrimaryColor);
+	font-family: "Alumni Sans";
+	font-weight: bold;
+	font-style: italic;
+	font-size: 2.5rem;
+	letter-spacing: .3rem;
+	text-transform: uppercase;
+	align-self: stretch;
+	margin-bottom: 1rem;
 }
-
-
 .glowFillTitle {
-    color: var(--orangeColor);
-    text-transform: uppercase;
-
-    position: relative;
-
+	color: var(--orangeColor);
+	text-transform: uppercase;
+	position: relative;
 }
-
-
 .glowFillTitle::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    color: var(--lightPrimaryColor);
-    text-transform: uppercase;
-
-
-    animation: glowAnimation-orange 1.5s infinite alternate;
-
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	color: var(--lightPrimaryColor);
+	text-transform: uppercase;
+	animation: glowAnimation-orange 1.5s infinite alternate;
 }
-
-
-
 .windowTitle {
-    font-size: 4rem;
-    font-family: "Thintel";
-    text-align: center;
-    color: var(--brightBlueColor);
+	font-size: 4rem;
+	font-family: "Thintel";
+	text-align: center;
+	color: var(--brightBlueColor);
 }
-
 .windowSubtitle {
-    font-family: "Inter";
-    font-weight: 500;
-    line-height: 1.5rem;
-    color: var(--brightBlueColor);
-    letter-spacing: .1rem;
-    text-align: center;
+	font-family: "Inter";
+	font-weight: 500;
+	line-height: 1.5rem;
+	color: var(--brightBlueColor);
+	letter-spacing: .1rem;
+	text-align: center;
 }
-
-
 .glowEmptyTitle {
-    position: relative;
-    color: var(--darkPrimaryColor);
-    letter-spacing: .5rem;
-    text-align: center;
-    /* Выравнивание текста по центру */
+	position: relative;
+	color: var(--darkPrimaryColor);
+	letter-spacing: .5rem;
+	text-align: center;
+	/* Выравнивание текста по центру */
 }
-
 .glowEmptyTitle::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    /* Занимает всю ширину родительского элемента */
-    z-index: -1;
-    color: var(--darkPrimaryColor);
-    text-transform: uppercase;
-    letter-spacing: .5rem;
-    text-align: center;
-    /* Выравнивание текста по центру */
-    -webkit-text-stroke: 4px var(--darkPrimaryColor);
-    text-stroke: 4px var(--darkPrimaryColor);
-    animation: glowAnimation-purple 1.5s infinite alternate;
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	/* Занимает всю ширину родительского элемента */
+	z-index: -1;
+	color: var(--darkPrimaryColor);
+	text-transform: uppercase;
+	letter-spacing: .5rem;
+	text-align: center;
+	/* Выравнивание текста по центру */
+	-webkit-text-stroke: 4px var(--darkPrimaryColor);
+	text-stroke: 4px var(--darkPrimaryColor);
+	animation: glowAnimation-purple 1.5s infinite alternate;
 }
-
-
 @keyframes glowAnimation-orange {
-    0% {
-        text-shadow: var(--orangeColor) 0 0 3rem;
-    }
-
-    50% {
-        text-shadow: var(--orangeColor) 0 0 1rem;
-        /* Weaken the text shadow */
-    }
-
-    100% {
-        text-shadow: var(--orangeColor) 0 0 3rem;
-    }
+	0% {
+		text-shadow: var(--orangeColor) 0 0 3rem;
+	}
+	50% {
+		text-shadow: var(--orangeColor) 0 0 1rem;
+		/* Weaken the text shadow */
+	}
+	100% {
+		text-shadow: var(--orangeColor) 0 0 3rem;
+	}
 }
-
 @keyframes glowAnimation-purple {
-    0% {
-        text-shadow: var(--purpleColor) 0 0 3rem;
-    }
-
-    50% {
-        text-shadow: var(--purpleColor) 0 0 1rem;
-        /* Weaken the text shadow */
-    }
-
-    100% {
-        text-shadow: var(--purpleColor) 0 0 3rem;
-    }
+	0% {
+		text-shadow: var(--purpleColor) 0 0 3rem;
+	}
+	50% {
+		text-shadow: var(--purpleColor) 0 0 1rem;
+		/* Weaken the text shadow */
+	}
+	100% {
+		text-shadow: var(--purpleColor) 0 0 3rem;
+	}
 }
-
-
 .text {
-
-    font-family: "Inter";
-    font-weight: 600;
-    letter-spacing: .1rem;
-    line-height: 1.5rem;
-    color: var(--lightPrimaryColor);
+	font-family: "Inter";
+	font-weight: 600;
+	letter-spacing: .1rem;
+	line-height: 1.5rem;
+	color: var(--lightPrimaryColor);
 }
-
-
 .notificationTitle {
-    padding: 1rem 3rem;
-    color: var(--brightBlueColor);
+	padding: 1rem 3rem;
+	color: var(--brightBlueColor);
 }
-
-
-
-
 .taskBlock {
-    width: fit-content;
-    margin: 0 5%;
-    display: flex;
-    flex-direction: row;
-    gap: 1.5rem;
+	width: fit-content;
+	margin: 0 5%;
+	display: flex;
+	flex-direction: row;
+	gap: 1.5rem;
 }
-
 .taskBlock .text {
-    width: 90%;
-    height: -webkit-fill-available;
+	width: 90%;
+	height: -webkit-fill-available;
 }
-
-
-
 /*------BUTTONS----*/
 
-
 .taskButtons {
-    display: flex;
-    justify-content: flex-start;
-    gap: 2rem;
-    flex-wrap: wrap;
+	display: flex;
+	justify-content: flex-start;
+	gap: 2rem;
+	flex-wrap: wrap;
 }
-
-
 .button {
-    font-family: 'Thintel';
-    border: 3px solid var(--whiteColor);
-    box-shadow: 6px 6px rgba(255, 255, 255, .25);
-    color: var(--whiteColor) !important;
-    text-align: center;
-    border-radius: .3rem;
-    font-size: 1.5rem;
-    padding: .2rem 1.5rem;
-    margin-top: 1rem;
-
-    text-wrap:nowrap;
+	font-family: 'Thintel';
+	border: 3px solid var(--whiteColor);
+	box-shadow: 6px 6px rgba(255, 255, 255, .25);
+	color: var(--whiteColor) !important;
+	text-align: center;
+	border-radius: .3rem;
+	font-size: 1.5rem;
+	padding: .2rem 1.5rem;
+	margin-top: 1rem;
+	text-wrap: nowrap;
 }
-
 .bigButton {
-    padding: 0rem 1rem;
-    font-size: 2.5rem;
-
-    border-radius: 6px;
+	padding: 0rem 1rem;
+	font-size: 2.5rem;
+	border-radius: 6px;
 }
-
 .orangeButton {
-    background-color: var(--orangeColor);
-
+	background-color: var(--orangeColor);
 }
-
 .window .blueButton {
-
-    left: 20%;
-    position: relative;
+	left: 20%;
+	position: relative;
 }
-
 .blueButton {
-    background-color: var(--brightBlueColor);
-   
-    padding: 0rem 1rem;
-
-   
-    
-    color: var(--whiteColor) !important;
-    box-shadow: 6px 6px rgba(0, 0, 0, .25);
-    -webkit-text-stroke-width: 0px !important;
+	background-color: var(--brightBlueColor);
+	padding: 0rem 1rem;
+	color: var(--whiteColor) !important;
+	box-shadow: 6px 6px rgba(0, 0, 0, .25);
+	-webkit-text-stroke-width: 0px !important;
 }
-
 .whiteButton {
-    background-color: var(--whiteColor);
-    color: var(--darkPrimaryColor) !important;
-   
-  
-
-   border-color: var(--darkPrimaryColor);
+	background-color: var(--whiteColor);
+	color: var(--darkPrimaryColor) !important;
+	border-color: var(--darkPrimaryColor);
 }
-
 .blackButton {
-    background-color: var(--darkPrimaryColor);
-
-    min-width: 4rem;
-
-   
-    box-shadow: 6px 6px rgba(0, 0, 0, .25);
-
-
-
-   border-color: var(--whiteColor);
+	background-color: var(--darkPrimaryColor);
+	min-width: 4rem;
+	box-shadow: 6px 6px rgba(0, 0, 0, .25);
+	border-color: var(--whiteColor);
 }
-
-.orangeWhiteButton{
-
-    background-color: var(--whiteColor) !important;
-    color: var(--orangeColor) !important;
-    border-color: var(--orangeColor) !important;
+.orangeWhiteButton {
+	background-color: var(--whiteColor) !important;
+	color: var(--orangeColor) !important;
+	border-color: var(--orangeColor) !important;
 }
-
-
-.lightBlueButton{
-    background-color: var(--lightBlueColor);
-
+.lightBlueButton {
+	background-color: var(--lightBlueColor);
 }
-
-
-
-
 .heroWrap {
-    position: relative;
-    padding-top: .5rem;
+	position: relative;
+	padding-top: .5rem;
 }
-
 .heroBlock {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: -webkit-fill-available;
-
-    background-image: url(/bgVid.mp4);
-
-    position: absolute;
-    top: 0px;
-
-    width: -webkit-fill-available;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: -webkit-fill-available;
+	background-image: url(/bgVid.mp4);
+	position: absolute;
+	top: 0px;
+	width: -webkit-fill-available;
 }
-
 .heroBlock h2 {
-    margin-bottom: 1rem;
-    text-align: center;
+	margin-bottom: 1rem;
+	text-align: center;
 }
-
-
-
-
 .marqLine {
-    background-color: var(--lightPrimaryColor);
-    overflow: hidden;
-    color: var(--brightBlueColor);
-    font-family: "Inter";
-    font-weight: bold;
-    padding: .5rem;
+	background-color: var(--lightPrimaryColor);
+	overflow: hidden;
+	color: var(--brightBlueColor);
+	font-family: "Inter";
+	font-weight: bold;
+	padding: .5rem;
 }
-
 .aboutBlock {
-
-    margin: 5rem 0;
-    padding-left: 4rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-
-
+	margin: 5rem 0;
+	padding-left: 4rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
 }
-
 .wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
-
-
-
 .whiteBlock {
-    background-color: var(--whiteColor);
-
-    background-image: radial-gradient(rgba(0, 0, 0, 0.3) 6px, transparent 6px);
-    background-size: 70px 70px;
-    /* Размер кружков */
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    padding: 3.5rem 0;
-
+	background-color: var(--whiteColor);
+	background-image: radial-gradient(rgba(0, 0, 0, 0.3) 6px, transparent 6px);
+	background-size: 70px 70px;
+	/* Размер кружков */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 3.5rem 0;
 }
-
 .notificationBlock {
-    background-color: var(--lightPrimaryColor);
-
-    border: var(--brightBlueColor) 7px solid;
-
-    border-radius: 1rem;
-
-    box-shadow: 1rem 1rem rgba(0, 0, 0, .5);
-
+	background-color: var(--lightPrimaryColor);
+	border: var(--brightBlueColor) 7px solid;
+	border-radius: 1rem;
+	box-shadow: 1rem 1rem rgba(0, 0, 0, .5);
 }
-
-
 .notificationTitleBlock {
-    border-top: var(--brightBlueColor) 7px solid;
-    border-bottom: var(--brightBlueColor) 7px solid;
+	border-top: var(--brightBlueColor) 7px solid;
+	border-bottom: var(--brightBlueColor) 7px solid;
 }
-
 .notificationNav {
-    padding: 0.5rem 0;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 1rem;
-    gap: 1rem;
+	padding: 0.5rem 0;
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 1rem;
+	gap: 1rem;
 }
-
-
 .windowsBlock {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
 }
-
 .window {
-    display: flex;
-    flex-direction: column;
-
-    border-radius: .5rem;
-    border: 3px solid var(--brightBlueColor);
-
-    margin-bottom: 4rem;
-
-    width: 40%;
-
-    box-shadow: 6px 6px rgba(0, 0, 0, .25);
+	display: flex;
+	flex-direction: column;
+	border-radius: .5rem;
+	border: 3px solid var(--brightBlueColor);
+	margin-bottom: 4rem;
+	width: 40%;
+	box-shadow: 6px 6px rgba(0, 0, 0, .25);
 }
-
 .window .notificationNav {
-    gap: .5rem;
-    border-bottom: var(--brightBlueColor) 3px solid;
-    border-top-right-radius: .3rem;
-    border-top-left-radius: .3rem;
+	gap: .5rem;
+	border-bottom: var(--brightBlueColor) 3px solid;
+	border-top-right-radius: .3rem;
+	border-top-left-radius: .3rem;
 }
-
 .wayBlock {
-    margin: 1.5rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    font-family: "Alumni Sans";
-    font-weight: bold;
-    font-style: italic;
-    font-size: 2rem;
-    letter-spacing: 0.1rem;
+	margin: 1.5rem 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: "Alumni Sans";
+	font-weight: bold;
+	font-style: italic;
+	font-size: 2rem;
+	letter-spacing: 0.1rem;
 }
-
 .firstWay {
-    position: relative;
-    right: 10%;
-    color: var(--lightBlueColor);
+	position: relative;
+	right: 10%;
+	color: var(--lightBlueColor);
 }
-
 .secondWay {
-    position: relative;
-    left: 10%;
-
-    color: var(--orangeColor);
+	position: relative;
+	left: 10%;
+	color: var(--orangeColor);
 }
-
 .windowInfo {
-    background-color: var(--lightPrimaryColor);
-
-    border-radius: .5rem;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    gap: 1.5rem;
-
-    padding-bottom: 1rem;
+	background-color: var(--lightPrimaryColor);
+	border-radius: .5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5rem;
+	padding-bottom: 1rem;
 }
-
 .windowBlue .notificationNav {
-    background-color: var(--orangeColor);
+	background-color: var(--orangeColor);
 }
-
 .windowOrange .notificationNav {
-    background-color: var(--lightBlueColor);
+	background-color: var(--lightBlueColor);
 }
-
-
-
-
 .advantagesBlock {
-    margin-top: 5rem;
+	margin-top: 5rem;
 }
-
-
-
-
-.advantage{
-    position: relative;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    height: 10rem;
-    height: max-content;
-
-    background-size: contain;
-
+.advantage {
+	position: relative;
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	height: 10rem;
+	height: max-content;
+	background-size: contain;
 }
-
-
-
 .advantageWrap {
-    margin: 4rem 0;
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    justify-content: center;
-    align-items: stretch;
-    flex-wrap: wrap;
-
-    font-family: "Inter";
-    font-weight: 500;
+	margin: 4rem 0;
+	display: flex;
+	flex-direction: row;
+	gap: 2rem;
+	justify-content: center;
+	align-items: stretch;
+	flex-wrap: wrap;
+	font-family: "Inter";
+	font-weight: 500;
 }
-
-
 .orangeDisk {
-    background-image: url(/img/diskettes/orange.png);
-
+	background-image: url(/img/diskettes/orange.png);
 }
-
 .purpleDisk {
-    background-image: url(/img/diskettes/violet.png);
-
+	background-image: url(/img/diskettes/violet.png);
 }
-
 .blueDisk {
-    background-image: url(/img/diskettes/blue.png);
-
+	background-image: url(/img/diskettes/blue.png);
 }
-
-.diskText{
-    width: inherit;
+.diskText {
+	width: inherit;
 }
-
 .screenBorder {
-    margin: 0 15%;
-    position: relative;
-    background-color: var(--lightPrimaryColor);
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-
-    border-radius: 1rem;
-    border: 3px solid black;
-
-    padding: 1rem;
+	margin: 0 15%;
+	position: relative;
+	background-color: var(--lightPrimaryColor);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 1rem;
+	border: 3px solid black;
+	padding: 1rem;
 }
-
 .screenTitle {
-    color: var(--brightBlueColor);
-    text-align: center;
-    text-shadow: var(--brightBlueColor) 0 0 3rem;
-    text-wrap: wrap;
+	color: var(--brightBlueColor);
+	text-align: center;
+	text-shadow: var(--brightBlueColor) 0 0 3rem;
+	text-wrap: wrap;
 }
-
 .screen {
-    background-color: var(--whiteColor) !important;
-    border-radius: 1rem;
-    border: 3px solid black;
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-
-
+	background-color: var(--whiteColor) !important;
+	border-radius: 1rem;
+	border: 3px solid black;
+	padding: 3rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
-
-
 /*-----------FORMs-------*/
+
 .mainForm {
-    margin: 3rem 0;
-    display: flex;
-    flex-direction: column;
-
-    gap: 1.5rem;
-    width: 75%;
+	margin: 3rem 0;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	width: 75%;
 }
-
 input:focus {
-    border-radius: .5rem;
-    border: 4px solid var(--brightBlueColor);
+	border-radius: .5rem;
+	border: 4px solid var(--brightBlueColor);
 }
-
 input::placeholder {
-    color: var(--brightBlueColor)
+	color: var(--brightBlueColor)
 }
-
-
 .blackForm input {
-    color: var(--darkPrimaryColor);
-    border: 4px solid var(--darkPrimaryColor);
+	color: var(--darkPrimaryColor);
+	border: 4px solid var(--darkPrimaryColor);
 }
-
 .blackForm {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    width: max-content;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	width: max-content;
 }
-
-
 #contactEmailField::placeholder {
-    color: var(--darkPrimaryColor) !important;
+	color: var(--darkPrimaryColor) !important;
 }
-
 input {
-    min-width: fit-content;
-    font-family: "Thintel";
-
-    background-color: var(--whiteColor);
-    color: var(--brightBlueColor);
-
-    letter-spacing: 0.1rem;
-    font-size: 1.5rem;
-    padding: 0.2rem;
-
-    border-radius: .5rem;
-    border: 4px solid var(--brightBlueColor);
-    padding-left: 1.5rem;
-
+	min-width: fit-content;
+	font-family: "Thintel";
+	background-color: var(--whiteColor);
+	color: var(--brightBlueColor);
+	letter-spacing: 0.1rem;
+	font-size: 1.5rem;
+	padding: 0.2rem;
+	border-radius: .5rem;
+	border: 4px solid var(--brightBlueColor);
+	padding-left: 1.5rem;
 }
-
-
-
-
-
-
 #formSendButton {
-    padding: .3rem;
-    align-self: center;
-    width: 30%;
+	padding: .3rem;
+	align-self: center;
+	width: 30%;
 }
-
 .contactBlock img {
-    top: 1rem;
-    left: 80%;
-    position: relative;
+	top: 1rem;
+	left: 80%;
+	position: relative;
 }
-
-
 .screenButton {
-    border: 1px solid black;
-    border-radius: 50px;
-    width: 1rem;
-    height: 1rem;
-    align-self: flex-end;
-    margin-top: 0.5rem;
+	border: 1px solid black;
+	border-radius: 50px;
+	width: 1rem;
+	height: 1rem;
+	align-self: flex-end;
+	margin-top: 0.5rem;
 }
-
 #screenBlue {
-    background-color: var(--brightBlueColor);
+	background-color: var(--brightBlueColor);
 }
 #screenOrange {
-    background-color: var(--orangeColor);
+	background-color: var(--orangeColor);
 }
 #screenYellow {
-    background-color: var(--yellowColor);
+	background-color: var(--yellowColor);
 }
-
-
-
 /*------FOOTER------*/
 
 .footer {
-    margin-top: 5rem;
-    padding: 4.5rem 3rem 2rem 4.5rem;
-    background-color: var(--lightPrimaryColor);
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
+	margin-top: 5rem;
+	padding: 4.5rem 3rem 2rem 4.5rem;
+	background-color: var(--lightPrimaryColor);
+	border-top-left-radius: 1rem;
+	border-top-right-radius: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 3rem;
 }
-
 .footerWrap {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
 }
-
-
-
-
 .logoFooter {
-    font-size: 5rem;
-    font-family: "Adventure";
-
-
-
+	font-size: 5rem;
+	font-family: "Adventure";
 }
-
-
 .footerContactBlock img {
-    align-self: flex-start;
+	align-self: flex-start;
 }
-
 .footerButtons {
-    margin-top: 2rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: .7rem;
+	margin-top: 2rem;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: .7rem;
 }
-
 .footerNavBlock {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
-
-
 #contactEmailField {
-    width: -webkit-fill-available;
+	width: -webkit-fill-available;
 }
-
 label {
-    font-family: 'Alumni Sans';
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-style: italic;
-    color: var(--orangeColor);
-    letter-spacing: 0.1rem;
+	font-family: 'Alumni Sans';
+	font-size: 1.5rem;
+	font-weight: bold;
+	font-style: italic;
+	color: var(--orangeColor);
+	letter-spacing: 0.1rem;
 }
-
-
-.wrap p{
-    max-width: 50%;
+.wrap p {
+	max-width: 50%;
 }
-
-.container-center{
-    display: flex;
-    width: 100%;
-
-    justify-content: center;
-    align-items: center;
+.container-center {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
 }
-
-
-
-
 /* Стиль свечения для кнопки HTML */
+
 .glow-orange {
-    box-shadow: 0 0 15px rgba(255, 165, 0, 0.8); /* Оранжевая тень */
-    transition: box-shadow 0.2s ease-in-out; /* Плавная анимация */
+	box-shadow: 0 0 15px rgba(255, 165, 0, 0.8);
+	/* Оранжевая тень */
+	transition: box-shadow 0.2s ease-in-out;
+	/* Плавная анимация */
 }
-
 /* Стиль свечения для кнопки CSS */
+
 .glow-blue {
-    box-shadow: 0 0 15px rgba(0, 0, 255, 0.8); /* Синяя тень */
-    transition: box-shadow 0.2s ease-in-out; /* Плавная анимация */
+	box-shadow: 0 0 15px rgba(0, 0, 255, 0.8);
+	/* Синяя тень */
+	transition: box-shadow 0.2s ease-in-out;
+	/* Плавная анимация */
 }
-
 /* Стиль свечения для кнопки JS */
+
 .glow-yellow {
-    box-shadow: 0 0 15px rgba(255, 255, 0, 0.8); /* Желтая тень */
-    transition: box-shadow 0.2s ease-in-out; /* Плавная анимация */
+	box-shadow: 0 0 15px rgba(255, 255, 0, 0.8);
+	/* Желтая тень */
+	transition: box-shadow 0.2s ease-in-out;
+	/* Плавная анимация */
 }
-
 /* Стиль свечения при наведении */
+
 .screenButton:hover {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Белая тень */
-    transition: box-shadow 0.2s ease-in-out; /* Плавная анимация */
+	box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+	/* Белая тень */
+	transition: box-shadow 0.2s ease-in-out;
+	/* Плавная анимация */
 }
-
-
-
-
-
 @media (max-width:1250px) {
-
-
-    .title {
-        font-size: 2rem;
-        text-wrap: wrap;
-    }
-
-    .subText {
-        text-align: center;
-    }
-
-    .aboutBlock {
-
-        gap: 2rem;
-
-
-        flex-direction: column;
-
-        align-items: center;
-
-        align-content: center;
-    }
-
-    .footerWrap {
-        flex-direction: column;
-        align-items: center;
-
-        gap: 3rem;
-    }
-    .wrap p{
-        max-width: 100%;
-    }
-
-    .wrap{
-        align-items: flex-start;
-        gap: 0.5rem;
-        width: 90%;
-    }
-
+	.title {
+		font-size: 2rem;
+		text-wrap: wrap;
+	}
+	.subText {
+		text-align: center;
+	}
+	.aboutBlock {
+		gap: 2rem;
+		flex-direction: column;
+		align-items: center;
+		align-content: center;
+	}
+	.footerWrap {
+		flex-direction: column;
+		align-items: center;
+		gap: 3rem;
+	}
+	.wrap p {
+		max-width: 100%;
+	}
+	.wrap {
+		align-items: flex-start;
+		gap: 0.5rem;
+		width: 90%;
+	}
 }
-
-
 @media (max-width:800px) {
-
-    .logoFooter{
-        font-size: 3rem;
-    }
-
-    .advantage{
-       
-        height: 10rem;
-   
-        background-size: contain;
-        word-break: break-all;
-    }
-    
-    .wayBlock{
-        display: none;
-    }
-
-    .notificationBlock{
-        width: 90%;
-
-    
-    }
-    
-    .windowsBlock {
-        flex-direction: column;
-    }
-
-    .window {
-        width: 65%;
-    }
-
-    .heroWrap{
-        height: 100vh;
-    }
-
-
-
-    .heroWrap video{
-        width: 100%;
-        height: 100%; 
-        object-fit: cover; 
-    }
-    
-    .logo{
-        font-size: 2.5rem;
-    }
-
-    .subTitle{
-        font-size: 1.2rem;
-        letter-spacing: .2rem;
-        font-weight: 600;
-    }
-
-
-    .title{
-        text-align: left;
-    }
-
-
-    .aboutBlock{
-        padding-left: 0rem;
-
-    }
-
-    .text{
-        font-weight: 500;
-        font-size: .8rem;
-        line-height: 1.2rem;
-    }
-
-    .notificationTitle{
-        text-align: center;
-        font-size: 1.2rem;
-        letter-spacing: 0;
-        padding: 1rem;
-    }
-
-    .notificationTitleBlock{
-        margin: 0 0 1rem 0;
-    }
-
-    .glowEmptyTitle{
-        text-align: center;
-    }
-
-    .advantageContainer {
-        width: 80%;
-        padding-left: 2rem;
-        overflow-x: auto;
-      }
-
-      .advantageWrap {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-      }
-
-      .screenBorder{
-        margin: 0;
-      }
-
-      .screenTitle{
-        text-align: center;
-      }
-
-      .mainForm{
-        width: 100%;
-        align-items: center;
-      }
-      #formSendButton{
-        width: 50%;
-        padding: .5rem;
-      }
-
-      .footer{
-        padding: 2rem 0;
-      }
-      label{
-        font-size: 1rem;
-        margin-bottom: .5rem;
-      }
-
-      .footerContactBlock img{
-        display: none;
-
-      }
-
-      .blackForm{
-        align-items: center;
-      }
+	.logoFooter {
+		font-size: 3rem;
+	}
+	.advantage {
+		height: 10rem;
+		background-size: contain;
+		word-break: break-all;
+	}
+	.wayBlock {
+		display: none;
+	}
+	.notificationBlock {
+		width: 90%;
+	}
+	.windowsBlock {
+		flex-direction: column;
+	}
+	.window {
+		width: 65%;
+	}
+	.heroWrap {
+		height: 100vh;
+	}
+	.heroWrap video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.logo {
+		font-size: 2.5rem;
+	}
+	.subTitle {
+		font-size: 1.2rem;
+		letter-spacing: .2rem;
+		font-weight: 600;
+	}
+	.title {
+		text-align: left;
+	}
+	.aboutBlock {
+		padding-left: 0rem;
+	}
+	.text {
+		font-weight: 500;
+		font-size: .8rem;
+		line-height: 1.2rem;
+	}
+	.notificationTitle {
+		text-align: center;
+		font-size: 1.2rem;
+		letter-spacing: 0;
+		padding: 1rem;
+	}
+	.notificationTitleBlock {
+		margin: 0 0 1rem 0;
+	}
+	.glowEmptyTitle {
+		text-align: center;
+	}
+	.advantageContainer {
+		width: 80%;
+		padding-left: 2rem;
+		overflow-x: auto;
+	}
+	.advantageWrap {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+	}
+	.screenBorder {
+		margin: 0;
+	}
+	.screenTitle {
+		text-align: center;
+	}
+	.mainForm {
+		width: 100%;
+		align-items: center;
+	}
+	#formSendButton {
+		width: 50%;
+		padding: .5rem;
+	}
+	.footer {
+		padding: 2rem 0;
+	}
+	label {
+		font-size: 1rem;
+		margin-bottom: .5rem;
+	}
+	.footerContactBlock img {
+		display: none;
+	}
+	.blackForm {
+		align-items: center;
+	}
 }
-
 @media (max-width:500px) {
-    .window{
-        width: 90%;
-    }
-    .bigButton, .title{
-        font-size: 1.5rem;
-    }
+	.window {
+		width: 90%;
+	}
+	.bigButton,
+	.title {
+		font-size: 1.5rem;
+	}
 }
 @media (max-width:380px) {
-    .footerButtons{
-        grid-template-columns: none;
-        gap: unset;
-    }
-
+	.footerButtons {
+		grid-template-columns: none;
+		gap: unset;
+	}
 }
