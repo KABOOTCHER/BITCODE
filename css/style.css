@@ -31,6 +31,7 @@ html {
 	font-size: 24px;
 	color: var(--darkPrimaryColor) !important;
 	cursor: url('/img/cursorImages/cursor_default.png'), auto !important;
+	font-family: 'Inter', 'Segoe UI';
 }
 a:hover,
 button:hover,
@@ -41,7 +42,7 @@ input:hover {
 
 header {
 	position: fixed;
-	top: 10%;
+	top: 5%;
 	z-index: 50;
 	left: 5%;
 	border: 3px solid var(--lightBlueColor);
@@ -86,6 +87,8 @@ header {
 .burger-btn.open .line:nth-child(3) {
 	transform: rotate(-45deg) translate(10px, -10px);
 }
+
+
 /*-------BASE TEXT STYLES---------*/
 
 .title {
@@ -545,6 +548,7 @@ input {
 .logoFooter {
 	font-size: 5rem;
 	font-family: "Adventure";
+	letter-spacing: 1.1rem;
 }
 .footerContactBlock img {
 	align-self: flex-start;
@@ -612,7 +616,7 @@ label {
 	transition: box-shadow 0.2s ease-in-out;
 	/* Плавная анимация */
 }
-@media (max-width:1250px) {
+@media (max-width:1350px) {
 	.title {
 		font-size: 2rem;
 		text-wrap: wrap;
@@ -640,9 +644,11 @@ label {
 		width: 90%;
 	}
 }
-@media (max-width:800px) {
+@media (max-width:900px) {
 	.logoFooter {
-		font-size: 3rem;
+		font-size: 2rem;
+		letter-spacing: 15px;
+
 	}
 	.advantage {
 		height: 10rem;
@@ -677,6 +683,16 @@ label {
 		letter-spacing: .2rem;
 		font-weight: 600;
 	}
+
+	.heroBlock h2 {
+		margin-bottom: 1rem;
+		/* text-align: justify; */
+	}
+	.wrap h1{
+		align-self: center;
+		text-align: center;
+		margin-top: 2rem;
+	}
 	.title {
 		text-align: left;
 	}
@@ -701,15 +717,24 @@ label {
 		text-align: center;
 	}
 	.advantageContainer {
-		width: 80%;
-		padding-left: 2rem;
+		width: 100%;
+
 		overflow-x: auto;
-	}
-	.advantageWrap {
 		display: flex;
-		flex-wrap: nowrap;
-		justify-content: flex-start;
+		flex-direction: column;
+		align-items: center;
 	}
+
+
+	.advantageWrap{
+		display: flex;
+		flex-wrap: wrap;
+		width: 80vw;
+		justify-content: center;
+		flex-direction: row;
+		align-items: center;
+	}
+
 	.screenBorder {
 		margin: 0;
 	}
@@ -738,7 +763,7 @@ label {
 		align-items: center;
 	}
 }
-@media (max-width:500px) {
+@media (max-width:550px) {
 	.window {
 		width: 90%;
 	}
@@ -746,10 +771,19 @@ label {
 	.title {
 		font-size: 1.5rem;
 	}
+	.advantageWrap {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+	}
 }
-@media (max-width:380px) {
+@media (max-width:400px) {
 	.footerButtons {
 		grid-template-columns: none;
 		gap: unset;
+	}
+	input{
+		width: inherit;
+		font-size: 1.2rem;
 	}
 }

@@ -90,6 +90,9 @@
 	border-bottom: 0.8rem solid black;
 	width: 90%;
 	border-radius: 1rem;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .advantage {
 	width: auto;
@@ -125,11 +128,7 @@
 	}
 }
 @media (max-width:900px) {
-	.pcBlock {
-		padding: 0;
-	}
-}
-@media (max-width:800px) {
+	
 	.pcBlock {
 		padding: 0;
 	}

@@ -18,7 +18,9 @@
 	z-index: -1;
 	text-shadow: var(--lightBlueColor) 0 0 3rem;
 }
-@media (min-width:800px) {
+
+
+@media (min-width:901px) {
 	.heroBlock {
 		display: none;
 	}
@@ -36,13 +38,15 @@
 	}
 	#PClogo {
 		display: block;
+		margin-top: 5rem;
 	}
 }
-@media(max-width:799px) {
+@media(max-width:900px) {
 	#PClogo {
 		display: none;
 	}
 	#mobLogo {
+		font-size: 2rem !important;
 		display: block;
 	}
 	#smallAbout {
@@ -52,5 +56,11 @@
 	}
 	#wideAbout {
 		display: none;
+	}
+}
+
+@media(max-width:450px){
+	.title {
+		font-size: 1rem;
 	}
 }

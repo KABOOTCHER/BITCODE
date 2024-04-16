@@ -3,12 +3,17 @@
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<link rel="preload" href="/fonts/AdventureSubtitles.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/fonts/AlumniSans-SemiBoldItalic.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/fonts/AlumniSans-ExtraBoldItalic.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/fonts/Thintel.woff2" as="font" type="font/woff2" crossorigin>
 	<link href="/css/fonts.css" rel="stylesheet">
 	<link href="/css/normalize.css" rel="stylesheet">
 	<link href="/css/style.css" rel="stylesheet">
 	<link href="/css/noise.css" rel="stylesheet">
 	<link href="/css/header.css" rel="stylesheet">
-	<title>BITCODE - Главная</title>
+	<link href="/css/task.css" rel="stylesheet">
+	<title>BITCODE - О нас</title>
 </head>
 <body>
 	<header>
@@ -20,19 +25,19 @@
 		<div class="menu">
 			<ul>
 				<li>
-					<a href="index.html">Главная</a>
+					<a href="/index.html">Главная</a>
 				</li>
 				<li>
 					<a href="/html/courses.html">Курсы</a>
 				</li>
 				<li>
-					<a href="#">Песочница</a>
+					<a href="/html/sandbox.html">Песочница</a>
 				</li>
 				<li>
-					<a href="#">Справочник</a>
+					<a href="/html/guide.html">Справочник</a>
 				</li>
 				<li>
-					<a href="#">О нас</a>
+					<a href="/html/about.html">О нас</a>
 				</li>
 			</ul>
 		</div>
@@ -40,28 +45,28 @@
 	<main class="main">
 		<h1 class="logo title" data-text="BITCODE" id="PClogo">BITCODE</h1>
 		<div class="heroWrap">
-			<video autoplay="" loop="" src="/bgVid.mp4" style="filter:grayscale(1)" width="100%"></video>
-			<div class=" tv-screen tv-screen-content noise-effect heroBlock">
+			<video muted poster="/img/vidPreview.webp" autoplay loop rel="preload" src="/bgVid.mp4" style="filter:grayscale(1)" width="100%"></video>
+			<div class="tv-screen tv-screen-content noise-effect heroBlock">
 				<div class="aboutBlock" id="smallAbout">
-				<h1 class="logo title" data-text="BITCODE" id="mobLogo">BITCODE</h1>
-				<div class="wrap">
-					<h1 class="title glowFillTitle" data-text="#О НАС">#О НАС</h1>
-					<h2 class="subTitle">Сделай свой выбор</h2>
-				</div><img alt="" class="aboutImg" src="/img/stickers/stars.png"></div>
+					<h1 class="logo title" data-text="BITCODE" id="mobLogo">BITCODE</h1>
+					<div class="wrap">
+					<h1 class="title glowFillTitle taskTitle" data-text="#О НАС" id="taskTitle">#О НАС</h1>
+					<h2 class="subTitle">Сделай свой выбор</h2><img alt="" class="aboutImg" src="/img/stickers/star.png"></div>
+				</div>
 			</div>
 		</div>
 		<div class="aboutBlock" id="wideAbout">
 			<div class="wrap">
-				<h1 class="title glowFillTitle" data-text="#О НАС">#О НАС</h1>
+				<h1 class="title glowFillTitle taskTitle" data-text="#О НАС" id="taskTitle">#О НАС</h1>
 				<h2 class="subTitle">Сделай свой выбор</h2>
 			</div>
 		</div>
 		<div class="taskBlock">
 		<div class="taskWrapper">
-			<p class="text" id="taskDescription">Приветствуем тебя в мире BITCODE - твоего надежного проводника в увлекательную среду веб-программирования с элементами стиля ретро!</p>
-		</div><img alt="" src="/img/stickers/pc.png"></div>
+			<p class="text" id="taskDescription">Приветствуем тебя в мире BITCODE - твоего надежного проводника в увлекательную сферу веб-программирования с элементами стиля ретро!</p>
+		</div><img alt="" src="/img/stickers/star.png"></div>
 		<div class="advantagesBlock">
-			<h1 class="title glowEmptyTitle" data-text="#Что ты получишь">#Что ты получишь</h1>
+			<h1 class="title glowEmptyTitle" data-text="#ЦЕННОСТИ ШКОЛЫ">#ЦЕННОСТИ ШКОЛЫ</h1>
 			<div class="advantageContainer">
 				<div class="advantageWrap"><img alt="" class="advantage" src="/img/diskettes/schoolPriority/01.png"> <img alt="" class="advantage" src="/img/diskettes/schoolPriority/02.png"> <img alt="" class="advantage" src="/img/diskettes/schoolPriority/03.png"></div>
 			</div>
@@ -84,10 +89,10 @@
 			2024
 		</div>
 	</footer>
-	<script src="/js/navbar.js"></script> 
 	<script src="/js/stroke.js">
 	</script> 
-	
+
+		<script src="/js/navbar.js"></script> 
 
 </body>
 </html>
