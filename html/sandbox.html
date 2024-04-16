@@ -3,6 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<link rel="preload" href="/fonts/AdventureSubtitles.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/fonts/AlumniSans-SemiBoldItalic.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/fonts/Thintel.woff2" as="font" type="font/woff2" crossorigin>
 	<link href="/css/fonts.css" rel="stylesheet">
 	<link href="/css/normalize.css" rel="stylesheet">
 	<link href="/css/style.css" rel="stylesheet">
@@ -41,7 +44,7 @@
 	<main class="main">
 		<h1 class="logo title" data-text="BITCODE" id="PClogo">BITCODE</h1>
 		<div class="heroWrap">
-			<video autoplay="" loop="" src="/bgVid.mp4" style="filter:grayscale(1)" width="100%"></video>
+			<video muted autoplay = "true" loop = "true"  rel="preload" src="/bgVid.mp4" style="filter:grayscale(1)" width="100%"></video>
 			<div class="tv-screen tv-screen-content noise-effect heroBlock">
 				<div class="aboutBlock" id="smallAbout">
 					<h1 class="logo title" data-text="BITCODE" id="mobLogo">BITCODE</h1>
@@ -129,23 +132,7 @@
 	</script> 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
 	</script> 
-	<script>
+		<script src="/js/navbar.js"></script> 
 
-
-	       document.addEventListener('DOMContentLoaded', function () {
-	           const burgerBtn = document.querySelector('.burger-btn');
-	           const menu = document.querySelector('.menu');
-
-	           burgerBtn.addEventListener('click', function () {
-	               burgerBtn.classList.toggle('open'); // Переключаем класс open у кнопки
-	               menu.classList.toggle('show'); // Переключаем класс show у меню
-	           });
-	       });
-
-
-
-
-
-	</script>
 </body>
 </html>

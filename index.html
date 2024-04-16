@@ -3,6 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<link rel="preload" href="fonts/AdventureSubtitles.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/AlumniSans-SemiBoldItalic.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/Thintel.woff2" as="font" type="font/woff2" crossorigin>
 	<link href="css/fonts.css" rel="stylesheet">
 	<link href="css/normalize.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
@@ -38,7 +41,7 @@
 	</header>
 	<main class="main">
 		<div class="heroWrap">
-			<video autoplay="" loop="" preload="poster" rel="preload" src="bgVid.mp4" style="filter:grayscale(1)" width="100%"></video>
+			<video muted poster="/img/vidPreview.webp" autoplay = "true" loop = "true"  rel="preload" src="bgVid.mp4" style="filter:grayscale(1)" width="100%"></video>
 			<div class=" tv-screen tv-screen-content noise-effect heroBlock">
 				<h1 class="logo title">BITCODE</h1>
 				<h2 class="subTitle">создай свое будущее</h2><a class="button bigButton orangeButton" href="#">ОТПРАВИТЬСЯ</a>
@@ -136,23 +139,14 @@
 			2024
 		</div>
 	</footer>
-	<script src="js/stroke.js">
-	</script> 
+	<script src="js/stroke.js"></script> 
+	<script src="js/navbar.js"></script> 
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
 	</script> 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.5.0/jquery.marquee.min.js">
 	</script> 
 	<script>
-
-	      document.addEventListener('DOMContentLoaded', function () {
-	       const burgerBtn = document.querySelector('.burger-btn');
-	       const menu = document.querySelector('.menu');
-
-	       burgerBtn.addEventListener('click', function () {
-	         burgerBtn.classList.toggle('open'); // Переключаем класс open у кнопки
-	         menu.classList.toggle('show'); // Переключаем класс show у меню
-	       });
-
 
 
 	       $(function () {
@@ -168,7 +162,7 @@
 	                 });
 	             });
 
-	      });
+	     
 	             
 
 
