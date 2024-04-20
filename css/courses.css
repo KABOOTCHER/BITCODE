@@ -10,7 +10,7 @@
 	height: 0;
 	border: none;
 	border-top: 4px dashed var(--orangeColor);
-	min-width: 40%;
+	min-width: 25%;
 	max-width: 50%;
 }
 .tv-screen-content {
@@ -53,6 +53,7 @@
 	font-family: 'Thintel';
 	color: var(--orangeColor);
 	font-size: 1.8rem;
+	text-align: left;
 }
 details {
 	display: block;
@@ -153,6 +154,21 @@ details[open] summary {
 	-webkit-text-stroke: var(--orangeColor);
 	-webkit-text-stroke-width: 1px;
 }
+
+@media (max-width:1200px){
+	.screen{
+		width: 100%;
+		height: 100%;
+	}
+
+	.screenBorder{
+		width: 80vw;
+		margin: 0 auto;
+		align-self: center;
+	}
+}
+
+
 @media (min-width:901px) {
 	.descriptionItem {
 		padding: 0 5%;
@@ -224,5 +240,14 @@ details[open] summary {
 	}
 	.window {
 		min-width: 90%;
+	}
+}
+@media(max-width:340px) {
+	
+	.descriptionTitle{
+		overflow-wrap: break-word;
+	}
+	.screen{
+		padding: 1rem 0;
 	}
 }

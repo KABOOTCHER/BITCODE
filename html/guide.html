@@ -13,7 +13,9 @@
 	<link href="/css/noise.css" rel="stylesheet">
 	<link href="/css/header.css" rel="stylesheet">
 	<link href="/css/selector.css" rel="stylesheet">
+	<link href="/css/courses.css" rel="stylesheet">
 	<link href="/css/guide.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/guide.css">
 	<title>BITCODE - Справочник</title>
 </head>
 <body>
@@ -69,40 +71,20 @@
 			<h1 class="title glowEmptyTitle" data-text="#HTML-ТЭГИ">#HTML-ТЭГИ</h1>
 			<div class="screenBorder">
 				<div class="screen tv-screen tv-screen-content noise-effect whiteScreen">
-					<div class="tagsWrapper">
-						<h1 class="title screenTitle">А</h1>
-						<div class="tagsContainer">
-							<div class="tag">
-								<p class="tagTitle">Название тега</p>
-								<p class="tagSubtitle">описание тега</p>
-							</div>
-							<div class="tag">
-								<p class="tagTitle">Название тега</p>
-								<p class="tagSubtitle">описание тега</p>
-							</div>
-							<div class="tag">
-								<p class="tagTitle">Название тега</p>
-								<p class="tagSubtitle">описание тега</p>
-							</div>
-							<div class="tag">
-								<p class="tagTitle">Название тега</p>
-								<p class="tagSubtitle">описание тега</p>
-							</div>
-						</div>
-					</div>
-					
+					<div class="tagsWrapper" id="htmlTagsWrapper"> </div>
 				</div>
 				<div class="screenButton glow-blue" id="screenBlue"></div>
 			</div>
-
+		
 			<h1 class="title glowEmptyTitle" data-text="#CSS-СТИЛИ">#CSS-СТИЛИ</h1>
 			<div class="screenBorder">
 				<div class="screen tv-screen tv-screen-content noise-effect whiteScreen">
-					<h1 class="title screenTitle">#NO_SIGNAL</h1>
+					<div class="tagsWrapper" id="cssTagsWrapper">
+						<div id="reference"></div>
+					</div>
 				</div>
 				<div class="screenButton glow-blue" id="screenBlue"></div>
 			</div>
-			
 		</div>
 
 	</main>
@@ -128,6 +110,8 @@
 	
 
 	<script src="/js/navbar.js"></script> 
+	<script src="/js/guideBook.js"></script> 
+
 
 </body>
 </html>

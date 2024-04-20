@@ -1,11 +1,12 @@
 .screen {
 	width: 50vw;
+	height: 40vh;
 	aspect-ratio: 3/1;
 	padding: 5rem 1rem;
 	gap: 1.5rem;
 	display: flex;
 	align-items: flex-start;
-	justify-content: center;
+	justify-content: flex-start;
 }
 .screenTitle {
 	align-self: center;
@@ -106,25 +107,26 @@
 #ejectButton {
 	align-self: flex-end;
 }
-.biggerTitle {
-	font-size: 2rem !important;
-}
+
 @media(max-width:1300px) {
 	.screenTitle {
 		font-size: 2.5rem;
 	}
+
+
 }
 @media (max-width:1050px) {
 	.screen {
-		height: 30vh;
+		height: 70vh;
 		width: -webkit-fill-available;
+		padding: 2rem;
 	}
 	.pcBlock {
 		margin-top: 5rem;
 		flex-wrap: wrap;
 	}
 	.screenBorder {
-		max-width: 90%;
+		max-width: 80%;
 	}
 }
 @media (max-width:900px) {
@@ -135,8 +137,7 @@
 	.screen p {
 		width: 100%;
 		line-height: 1.5rem;
-		background-color: rgba(8, 8, 8, 0.2);
-		backdrop-filter: blur(50%);
+		
 		padding: 1rem;
 		margin: 0;
 	}
@@ -147,9 +148,32 @@
 		height: 50vw;
 		padding: 0;
 	}
+
+	.screen{
+		overflow-y: auto;
+		
+	}
 }
 @media (max-width:500px) {
 	.title {
-		font-size: 1rem;
+		font-size: 1.5rem;
+		width: 120%;
+	}
+
+	.screen p{
+		font-size: 1.7rem;
+		padding: 0;
+	}
+	.screen{
+		align-items: center;
+		justify-content: center;
+		
+	}
+
+	.screen a{
+		max-width: 50%;
+		overflow-wrap: break-word;
+		white-space: pre-wrap;
 	}
 }
+
