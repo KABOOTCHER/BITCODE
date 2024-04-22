@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
             floppyLine.appendChild(draggedElement);
         }
         const advantageTitle = draggedElement.getAttribute("data-title");
+        const advantageLink = draggedElement.getAttribute("data-link");
         const advantageDescription = draggedElement.getAttribute("data-description");
         const advantageId = draggedElement.id;
 
@@ -105,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function() {
         addedButton = document.createElement("a");
         addedButton.classList.add("button", "blueButton");
         addedButton.textContent = "Перейти к заданию";
-        addedButton.setAttribute("href", "task.html#" + advantageId);
+        addedButton.setAttribute("href",advantageLink +".html#" + advantageId);
         screenContent.appendChild(addedButton);
         screenTitle.textContent = advantageTitle.toUpperCase();
         if (window.innerWidth <= 500) {

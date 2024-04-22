@@ -44,7 +44,7 @@
 		<div class="heroWrap">
 			<video muted poster="/img/vidPreview.webp" autoplay loop rel="preload" src="bgVid.mp4" style="filter:grayscale(1)" width="100%"></video>
 			<div class=" tv-screen tv-screen-content noise-effect heroBlock">
-				<h1 class="logo title">BITCODE</h1>
+				<h1 class="logo title " data-text="BITCODE">BITCODE</h1>
 				<h2 class="subTitle">создай свое будущее</h2><a class="button bigButton orangeButton" href="#whiteBlock">ОТПРАВИТЬСЯ</a>
 			</div>
 		</div>
@@ -54,7 +54,7 @@
 		</div>
 		<div class="aboutBlock">
 		<div class="wrap">
-			<h1 class="title glowFillTitle" data-text="#учись лаконично">#учись лаконично</h1>
+			<h1 class="title glowFillTitle glowBeige" data-text="#учись лаконично">#учись лаконично</h1>
 			<h2 class="subTitle">ведь твое время важно</h2>
 			<p class="text">Главный принцип нашей школы - краткость. Вдохновись нашей атмосферой и начни творить уже после первого задания.</p>
 		</div><img alt="" class="aboutImg" src="img/stickers/clock.png"></div>
@@ -85,7 +85,7 @@
 									веб-разработки на<br>
 									практическом курсе.
 								</div>
-							</div><a class="button blueButton" href="/html/tasks_1.html#test">Перейти &gt;</a>
+							</div><a class="button blueButton" href="/html/courses.html">Перейти &gt;</a>
 						</div>
 					</div>
 					<div class="window windowBlue">
@@ -107,7 +107,7 @@
 			</div>
 		</div>
 		<div class="advantagesBlock">
-			<h1 class="title glowEmptyTitle" data-text="#Что ты получишь">#Что ты получишь</h1>
+			<h1 class="title glowEmptyTitle glowPurple" data-text="#Что ты получишь">#Что ты получишь</h1>
 			<div class="advantageContainer">
 				<div class="advantageWrap"><img alt="" class="advantage" src="img/diskettes/advantageDisk/01.png"> <img alt="" class="advantage" src="img/diskettes/advantageDisk/02.png"> <img alt="" class="advantage" src="img/diskettes/advantageDisk/03.png"></div>
 			</div>
@@ -117,7 +117,10 @@
 				<div class="screen tv-screen tv-screen-content noise-effect whiteScreen">
 					<h1 class="title screenTitle">#СВЯЖИСЬ С НАМИ</h1>
 					<form action="#" class="mainForm">
-						<input id="nameField" name="name" placeholder="Ваше имя" type="text"> <input id="phoneField" name="phone" placeholder="Ваш номер телефона" type="tel"> <input id="emailField" name="email" placeholder="Ваш адрес эл.почты" type="email"> <input class="button blueButton" id="formSendButton" type="button" value="Отправить -&gt;">
+						<input id="nameField" name="name" placeholder="Ваше имя" type="text" autocomplete="name"> 
+						<input id="phoneField" name="phone" placeholder="Ваш номер телефона" type="tel" autocomplete="tel">
+						 <input id="emailField" name="email" placeholder="Ваш адрес эл.почты" type="email" autocomplete="email">
+						<input onSubmit="js/Fbase.js" class="button blueButton" id="formSendButton" type="button" value="Отправить -&gt;">
 					</form>
 				</div>
 				<div class="screenButton" id="screenBlue"></div>
@@ -129,7 +132,7 @@
 			<div class="footerNavBlock">
 				<a class="logoFooter" href="#">BITCODE</a>
 				<div class="footerButtons">
-					<a class="button orangeWhiteButton" href="#">Главная</a> <a class="button orangeWhiteButton" href="#">О нас</a> <a class="button orangeWhiteButton" href="#">Курсы</a> <a class="button orangeWhiteButton" href="#">Контакты</a> <a class="button orangeWhiteButton" href="#">Задания</a> <a class="button orangeWhiteButton" href="#">Песочница</a>
+					<a class="button orangeWhiteButton" href="index.html">Главная</a> <a class="button orangeWhiteButton" href="/html/about.html">О нас</a> <a class="button orangeWhiteButton" href="/html/courses.html">Курсы</a> <a class="button orangeWhiteButton" href="/html/guide.html">Справочник</a> <a class="button orangeWhiteButton" href="/html/tasks_1.html">Задания</a> <a class="button orangeWhiteButton" href="/html/sandbox.html">Песочница</a>
 				</div>
 			</div>
 			<div class="footerContactBlock">
@@ -141,13 +144,19 @@
 			2024
 		</div>
 	</footer>
+
+	<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore-compat.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.5.0/jquery.marquee.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
 	<script src="js/stroke.js"></script> 
 	<script src="js/navbar.js"></script> 
+	<script src="js/Fbase.js"></script> 
+	<script src="js/formSender.js"></script> 
+
+
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
-	</script> 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.5.0/jquery.marquee.min.js">
-	</script> 
 	<script>
 
 
@@ -163,12 +172,7 @@
 	                     startVisible: true
 	                 });
 	             });
-
-	     
-	             
-
-
-	            
+            
 	</script>
 </body>
 </html>

@@ -14,13 +14,27 @@ var applyTextStroke = function(className, color, width) {
 
 if (window.innerWidth > 750) {
 	applyTextStroke("glowFillTitle", "var(--lightPrimaryColor)", 4);
-	applyTextStroke("glowEmptyTitle", "var(--purpleColor)", 4);
+	applyTextStroke("glowPurple", "var(--purpleColor)", 4);
+	applyTextStroke("glowYellow", "var(--yellowColor)", 4);
+	applyTextStroke("glowOrange", "var(--orangeColor)", 4);
+	applyTextStroke("glowBeige", "var(--lightPrimaryColor)", 4);
+	applyTextStroke("glowBlue", "var(--lightBlueColor)", 4);
+
+
+
+	
 	applyTextStroke("logoFooter ", "var(--orangeColor)", 4);
 	applyTextStroke("logo", "var(--lightBlueColor)", 4);
 } else {
 	applyTextStroke("glowFillTitle", "var(--lightPrimaryColor)", 1.5);
-	applyTextStroke("glowEmptyTitle", "var(--purpleColor)", 1.5);
+
+	
 	applyTextStroke("logoFooter", "var(--orangeColor) !important", 1.5);
 	applyTextStroke("logo", "var(--lightBlueColor)", 1.5);
 	applyTextStroke("logoFooter ", "var(--orangeColor)", 1.5);
+
+	applyTextStroke("glowPurple", "var(--purpleColor)", 1.5);
+	applyTextStroke("glowYellow", "var(--yellowColor)", 1.5);
+	applyTextStroke("glowOrange", "var(--orangeColor)", 1.5);
+	applyTextStroke("glowBlue", "var(--lightBlueColor)", 1.5);
 }
