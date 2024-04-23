@@ -18,7 +18,10 @@
 	margin: 0;
 	padding: 0;
 	scroll-behavior: smooth;
+	cursor: url('/img/cursorImages/cursor_default.png'), auto !important;
 }
+
+
 a {
 	text-decoration: none;
 	color: var(--whiteColor);
@@ -32,15 +35,35 @@ html {
 	/* Размер кружков */
 	font-size: 24px;
 	color: var(--darkPrimaryColor) !important;
-	cursor: url('/img/cursorImages/cursor_default.png'), auto !important;
+	
 	font-family: 'Inter', 'Segoe UI';
 }
-a:hover,
-button:hover,
-input:hover {
-	cursor: url('/img/cursorImages/cursor_pointer.png'), auto !;
+
+input:not([type='button'], [type='submit'])
+{
+	cursor: url('/img/cursorImages/cursor_text.png'), auto !important;
 }
-/*------------ NAV BURGER BUTTON */
+a,
+button,
+header,
+.burger-btn,
+.button,
+summary,
+#ejectButton,
+.windowInfo .advantage,
+.tag,
+.tag p,
+.screenButton
+{
+	cursor: url('/img/cursorImages/cursor_pointer.png'), auto !important;
+}
+
+
+
+.copyright {
+	cursor: url('/img/cursorImages/cursor_default.png'), auto !important;
+}
+
 
 header {
 	position: fixed;
@@ -437,6 +460,8 @@ header {
 }
 .window .notificationNav div{
 display: flex;
+gap: .5rem;
+align-items: center;
 
 }
 .wayBlock {
@@ -688,6 +713,11 @@ label {
 
 .glow-yellow {
 	box-shadow: 0 0 15px rgba(255, 255, 0, 0.8);
+	/*Желтаятень*/transition: box-shadow 0.2s ease-in-out;
+
+}
+.glow-white {
+	box-shadow: 0 0 20px 7px rgba(255, 255, 255, 0.8);
 	/* Желтая тень */
 	transition: box-shadow 0.2s ease-in-out;
 	/* Плавная анимация */

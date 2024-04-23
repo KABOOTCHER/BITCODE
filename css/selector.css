@@ -5,8 +5,8 @@
 	padding: 5rem 1rem;
 	gap: 1.5rem;
 	display: flex;
-    align-items: center;
-    justify-content: center;
+	align-items: center;
+		justify-content: flex-start;
 
 }
 .screenTitle {
@@ -21,9 +21,7 @@
 	font-size: 2rem;
 	line-height: 1.2rem;
 }
-.screen a {
-	margin-left: 5%;
-}
+
 .pcBlock {
 	display: flex;
 	flex-direction: row;
@@ -110,6 +108,19 @@
 	align-self: flex-end;
 }
 
+.notificationNav{
+	display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 3%;
+    color: var(--whiteColor);
+}
+
+#PCsubtitle{
+	display: block;
+}
+#MOBsubtitle{
+	display: none;
+}
 @media(max-width:1300px) {
 	.screenTitle {
 		font-size: 2.5rem;
@@ -118,6 +129,13 @@
 
 }
 @media (max-width:1050px) {
+	#PCsubtitle{
+		display: none;	
+	}
+	#MOBsubtitle{
+		display: block;
+	}
+
 	.screen {
 		height: 40vh;
 		width: -webkit-fill-available;
@@ -154,7 +172,7 @@
 	}
 
 	.screen{
-		/* overflow-y: auto; */
+		overflow-y: scroll;
 		
 	}
 }
@@ -170,7 +188,7 @@
 	}
 	.screen{
 		align-items: center;
-		justify-content: center;
+		justify-content: flex-start;
 		
 	}
 

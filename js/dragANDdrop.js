@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Eject button event listener
     ejectButton.addEventListener("click", function() {
         restoreOriginalState();
+        ejectButton.classList.remove("glow-white")
     });
 
     // Event handler for click (for touch devices)
@@ -114,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function() {
             screenTitle.classList.add('biggerTitle');
         }
         blockAdded = true;
-   
+        ejectButton.classList.add("glow-white")
     }
 
     // Add event listeners for floppyBlock
