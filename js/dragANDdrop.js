@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function updateAdvantageEventListeners() {
         const advantages = document.querySelectorAll(".advantage");
         advantages.forEach(advantage => {
-            if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+            if ('ontouchstart' in window || navigator.maxTouchPoints > 1) {
                 // If it's a touch device
                 advantage.removeEventListener("dragstart", dragStart);
                 advantage.addEventListener("click", clickEvent);
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("resize", updateAdvantageEventListeners);
 
     // Check for touch events support
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 1;
 
     // If it's a touch device, update the event listeners
     if (isTouchDevice) {

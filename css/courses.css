@@ -54,6 +54,7 @@
 	color: var(--orangeColor);
 	font-size: 1.8rem;
 	text-align: left;
+	text-wrap:wrap;
 }
 details {
 	display: block;
@@ -80,6 +81,8 @@ summary {
 	font-size: 1.4em;
 	cursor: url('/img/cursorImages/cursor_pointer.png');
 	width: -webkit-fill-available;
+	width: -moz-available;
+	
 	color: var(--orangeColor);
 	font-family: "Thintel";
 	font-size: 1.8rem;
@@ -199,6 +202,7 @@ details[open] summary {
 		overflow-x: auto;
 		flex-wrap: nowrap;
 		width: -webkit-fill-available;
+		width: -moz-available;
 		justify-content: flex-start;
 	}
 	.window {

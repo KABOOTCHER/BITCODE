@@ -356,11 +356,11 @@ header {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: -webkit-fill-available;
+	height: 100%;
 	background-image: url(/bgVid.mp4);
 	position: absolute;
 	top: 0px;
-	width: -webkit-fill-available;
+	width: 100%;
 }
 .heroBlock h2 {
 	margin-bottom: 1rem;
@@ -715,10 +715,14 @@ label {
 }
 
 
+
 @media (max-width:1350px) {
 	.title {
 		font-size: 2rem;
 		text-wrap: wrap;
+	}
+	.smallAbout .title{
+		word-wrap: break-word !important;
 	}
 	.subText {
 		text-align: center;
