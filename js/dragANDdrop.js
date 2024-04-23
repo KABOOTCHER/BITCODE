@@ -109,10 +109,12 @@ document.addEventListener("DOMContentLoaded", function() {
         addedButton.setAttribute("href",advantageLink +".html#" + advantageId);
         screenContent.appendChild(addedButton);
         screenTitle.textContent = advantageTitle.toUpperCase();
+        
         if (window.innerWidth <= 500) {
             screenTitle.classList.add('biggerTitle');
         }
         blockAdded = true;
+   
     }
 
     // Add event listeners for floppyBlock
@@ -123,14 +125,16 @@ document.addEventListener("DOMContentLoaded", function() {
     function updateAdvantageEventListeners() {
         const advantages = document.querySelectorAll(".advantage");
         advantages.forEach(advantage => {
-            if ('ontouchstart' in window || navigator.maxTouchPoints > 1) {
+            if ('ontouchstart' in window ||  (navigator.maxTouchPoints > 0 & navigator.maxTouchPoints < 256)) {
                 // If it's a touch device
                 advantage.removeEventListener("dragstart", dragStart);
                 advantage.addEventListener("click", clickEvent);
+                
             } else {
                 // If it's not a touch device
                 advantage.removeEventListener("click", clickEvent);
                 advantage.addEventListener("dragstart", dragStart);
+                
             }
         });
     }
@@ -142,10 +146,12 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("resize", updateAdvantageEventListeners);
 
     // Check for touch events support
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 1;
+    const isTouchDevice = 'ontouchstart' in window || (navigator.maxTouchPoints > 0 & navigator.maxTouchPoints < 256);
 
     // If it's a touch device, update the event listeners
     if (isTouchDevice) {
         updateAdvantageEventListeners();
     }
 });
+
+
