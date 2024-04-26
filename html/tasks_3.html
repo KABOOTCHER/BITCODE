@@ -65,7 +65,7 @@
 	<main class="main">
 		<h1 class="logo title" data-text="BITCODE" id="PClogo">BITCODE</h1>
 		<div class="heroWrap">
-			<video muted poster="/img/vidPreview.webp" autoplay loop rel="preload" src="/bgVid.mp4"
+			<video muted poster="/img/vidPreview.webp" autoplay loading="eager" loop rel="preload" src="/bgVid.mp4"
 				style="filter:grayscale(1)" width="100%"></video>
 			<div class=" tv-screen tv-screen-content noise-effect heroBlock">
 				<div class="aboutBlock" id="smallAbout">
@@ -73,7 +73,7 @@
 					<div class="wrap">
 						<h1 class="title glowFillTitle" data-text="#Навыки HTML/CSS">#Навыки HTML/CSS</h1>
 						<h2 class="subTitle">пройди все задания</h2>
-					</div><img alt="" class="aboutImg" src="/img/stickers/stars.png">
+					</div><img loading="lazy" alt="" class="aboutImg" src="/img/stickers/stars.png">
 				</div>
 			</div>
 		</div>
@@ -94,40 +94,40 @@
 				<div class="floppyTitleBlock">
 					<h2 class="floppyTitle">Вставьте<br>
 						дискету</h2>
-				</div><img alt="" id="ejectButton" src="/img/stickers/ejectButton.png">
+				</div><img loading="lazy" alt="" id="ejectButton" src="/img/stickers/ejectButton.png">
 				<hr class="floppyLine">
 			</div>
 		</div>
 		<div class="container-center">
 			<div class="window windowPurple">
-				<div class="notificationNav"><img alt="" class="notificationIcon" src="/img/navItems/hideWhite.png">
-					<img alt="" class="notificationIcon" src="/img/navItems/crossWhite.png"></div>
+				<div class="notificationNav"><img loading="lazy" alt="" class="notificationIcon" src="/img/navItems/hideWhite.png">
+					<img loading="lazy" alt="" class="notificationIcon" src="/img/navItems/crossWhite.png"></div>
 				<div class="windowInfo">
-					<img alt="anotherArray" class="advantage" data-link="task3"
+					<img loading="lazy" alt="anotherArray" class="advantage" data-link="task3"
 						data-description="В этом задании ты создашь ещё один алгоритм работы с массивом, который будет находить наибольшее число."
 						data-title="Поиск наибольшего" draggable="true" id="anotherArray"
 						src="/img/diskettes/task3Disk/task01.png">
-					<img alt="poly" class="advantage" data-link="task3"
+					<img loading="lazy" alt="poly" class="advantage" data-link="task3"
 						data-description="Научись углубленно анализировать текст из переменных в этом задании"
 						data-title="Палиндром" draggable="true" id="poly"
 						src="/img/diskettes/task3Disk/task02.png">
-					<img alt="sort" class="advantage" data-link="task3"
+					<img loading="lazy" alt="sort" class="advantage" data-link="task3"
 						data-description="В этом задании ты напишешь алгоритм, сортирующий данные в массиве"
 						data-title="Сортировщик" draggable="true" id="sort" src="/img/diskettes/task3Disk/task03.png">
-					<img alt="timer" class="advantage" data-link="task3"
+					<img loading="lazy" alt="timer" class="advantage" data-link="task3"
 						data-description="Напиши таймер, который будет выводить сообщение через определенный промежуток времени"
 						data-title="Таймер" draggable="true" id="timer" src="/img/diskettes/task3Disk/task04.png">
-					<img alt="planner" class="advantage" data-link="task3"
+					<img loading="lazy" alt="planner" class="advantage" data-link="task3"
 						data-description="Создай планировщик событий, в котором можно вносить и удалять задания" data-title="Планировщик"
 						draggable="true" id="planner" src="/img/diskettes/task3Disk/task05.png">
-					<img alt="colorGenerator" class="advantage" data-link="task3"
+					<img loading="lazy" alt="colorGenerator" class="advantage" data-link="task3"
 						data-description="В этом задании тебе нужно создать генератор цвета в любом из форматов, например RGB или HEX"
 						data-title="Генератор цвета" draggable="true" id="colorGenerator" src="/img/diskettes/task3Disk/task06.png">
-					<img alt="password" class="advantage" data-link="task3"
+					<img loading="lazy" alt="password" class="advantage" data-link="task3"
 						data-description="Создай генератор паролей, в котором можно настроить длину пароля, наличие специальных символов и букв разного регистра"
 						data-title="Генератор паролей" draggable="true" id="password"
 						src="/img/diskettes/task3Disk/task07.png">
-					<img alt="cesar" class="advantage" data-link="task3"
+					<img loading="lazy" alt="cesar" class="advantage" data-link="task3"
 						data-description="Напиши алгоритм, реализующий шифр цезаря с любой величиной сдвига"
 						data-title="Шифр Цезаря" draggable="true" id="cesar" src="/img/diskettes/task3Disk/task08.png">
 				</div>
@@ -158,12 +158,12 @@
 			2024
 		</div>
 	</footer>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
-		<script src="/js/stroke.js"></script>
-	<script src="/js/dragANDdrop.js"></script>
-	<script src="/js/navbar.js"></script>
-	<script src="/js/formSender.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js" defer></script>
+		<script src="/js/stroke.js" async></script>
+	<script src="/js/dragANDdrop.js" defer></script>
+	<script src="/js/navbar.js" async></script>
+	<script src="/js/formSender.js" defer></script>
 </body>
 
 </html>

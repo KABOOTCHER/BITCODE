@@ -66,14 +66,14 @@
 	<main class="main">
 		<h1 class="logo title" data-text="BITCODE" id="PClogo">BITCODE</h1>
 		<div class="heroWrap">
-			<video muted poster="/img/vidPreview.webp" autoplay loop rel="preload" src="/bgVid.mp4" style="filter:grayscale(1)" width="100%"></video>
+			<video muted poster="/img/vidPreview.webp" loading="eager" autoplay loop rel="preload" src="/bgVid.mp4" style="filter:grayscale(1)" width="100%"></video>
 			<div class=" tv-screen tv-screen-content noise-effect heroBlock">
 				<div class="aboutBlock" id="smallAbout">
 				<h1 class="logo title" data-text="BITCODE" id="mobLogo">BITCODE</h1>
 				<div class="wrap">
 					<h1 class="title glowFillTitle glowBeige" data-text="#СПРАВОЧНИК">#СПРАВОЧНИК</h1>
 					<h2 class="subTitle">Узнай всё что нужно</h2>
-				</div><img alt="" class="aboutImg" src="/img/stickers/stars.png"></div>
+				</div><img loading="lazy" alt="" class="aboutImg" src="/img/stickers/stars.png"></div>
 			</div>
 		</div>
 
@@ -117,23 +117,23 @@
 			<div class="footerContactBlock">
 			<form action="#" class="blackForm">
 				<label for="contactEmail">Подписаться на обновления...</label> <input id="contactEmailField" name="contactEmail" placeholder="Ваш адрес эл.почты" type="email"> <input class="button orangeWhiteButton" id="emailSendButton" type="button" value="Отправить -&gt;">
-			</form><img alt="" src="/img/stickers/disk.png"></div>
+			</form><img loading="lazy" alt="" src="/img/stickers/disk.png"></div>
 		</div>
 		<div class="copyright button whiteButton">
 			2024
 		</div>
 	</footer>
-	<script src="/js/stroke.js"></script> 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
+	<script src="/js/stroke.js" async></script> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js" defer></script>
 	
 	
 
-	<script src="/js/navbar.js"></script> 
-	<script src="/js/guideBook.js"></script> 
+	<script src="/js/navbar.js" async></script> 
+	<script src="/js/guideBook.js" defer></script> 
 	
 	
-	<script src="/js/formSender.js"></script> 
+	<script src="/js/formSender.js" defer></script> 
 
 
 </body>
