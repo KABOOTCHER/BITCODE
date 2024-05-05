@@ -63,14 +63,14 @@
 	<main class="main">
 		<h1 class="logo title" data-text="BITCODE" id="PClogo">BITCODE</h1>
 		<div class="heroWrap">
-			<video muted poster="/img/vidPreview.webp" autoplay loop rel="preload" loading="eager" src="/bgVid.mp4" style="filter:grayscale(1)" width="100%"></video>
+			<video muted poster="/img/vidPreview.webp" autoplay loop rel="preload" src="/bgVid.mp4" style="filter:grayscale(1)" width="100%"></video>
 			<div class=" tv-screen tv-screen-content noise-effect heroBlock">
 				<div class="aboutBlock" id="smallAbout">
 				<h1 class="logo title" data-text="BITCODE" id="mobLogo">BITCODE</h1>
 				<div class="wrap">
 					<h1 class="title glowFillTitle" data-text="#Навыки HTML/CSS">#Навыки HTML/CSS</h1>
 					<h2 class="subTitle">пройди все задания</h2>
-				</div><img loading="lazy" alt="" class="aboutImg" src="/img/stickers/stars.png"></div>
+				</div><img alt="" class="aboutImg" src="/img/stickers/stars.png"></div>
 			</div>
 		</div>
 		<div class="aboutBlock" id="wideAbout">
@@ -90,22 +90,26 @@
 				<div class="floppyTitleBlock">
 					<h2 class="floppyTitle">Вставьте<br>
 					дискету</h2>
-				</div><img loading="lazy" alt="" id="ejectButton" src="/img/stickers/ejectButton.png">
+				</div><img alt="" id="ejectButton" src="/img/stickers/ejectButton.png">
 				<hr class="floppyLine">
 			</div>
 		</div>
 		<div class="container-center">
 			<div class="window windowPurple">
-				<div class="notificationNav"><img loading="lazy" alt="" class="notificationIcon" src="/img/navItems/hideWhite.png"> <img loading="lazy" alt="" class="notificationIcon" src="/img/navItems/crossWhite.png"></div>
+				<div class="notificationNav aboutNav">
+					<p class="aboutSubTitle" id="PCsubtitle">Перетащи дискету в дисковод</p>
+					<p class="aboutSubTitle" id="MOBsubtitle">Нажми на дискету</p>
+					<div><img alt="" class="notificationIcon" src="/img/navItems/hideWhite.png"> <img alt="" class="notificationIcon closeIcon" src="/img/navItems/crossWhite.png"></div>
+				</div>
 				<div class="windowInfo">
-					<img loading="lazy" alt="square" class="advantage" data-link="task2" data-description="Ты напишешь алгоритм, вычисляющий площадь по двум сторонам." data-title="Площадь рамы" draggable="true" id="square" src="/img/diskettes/task2Disk/task01.png"> 
-					<img loading="lazy" alt="evenNum" class="advantage" data-link="task2" data-description="Здесь ты создашь функцию, проверяющую четность введенного числа" data-title="Четность числа" draggable="true" id="evenNum" src="/img/diskettes/task2Disk/task02.png"> 
-					<img loading="lazy" alt="array" class="advantage" data-link="task2" data-description="В этом задании ты создашь простой калькулятор для вычисления базовых действий" data-title="Калькулятор" draggable="true" id="array" src="/img/diskettes/task2Disk/task03.png"> 
-					<img loading="lazy" alt="objects" class="advantage" data-link="task2" data-description="Создай карточку с информацией о себе и научись выводить из неё информацию" data-title="Объект" draggable="true" id="objects" src="/img/diskettes/task2Disk/task04.png"> 
-					<img loading="lazy" alt="cycle" class="advantage" data-link="task2" data-description="В этом задании ты научишься обрабатывать данные в цикле, путем создания функции по вычислению факториала." data-title="Циклы" draggable="true" id="cycle" src="/img/diskettes/task2Disk/task05.png"> 
-					<img loading="lazy" alt="strings" class="advantage" data-link="task2" data-description="Напиши функцию, которая принимает строку в качестве аргумента и возвращает ее в обратном порядке. " data-title="Строки" draggable="true" id="strings" src="/img/diskettes/task2Disk/task06.png"> 
-					<img loading="lazy" alt="events" class="advantage" data-link="task2" data-description="В этом задании ты научишься обрабатывать различные действия на странице." data-title="Обработка событий" draggable="true" id="events" src="/img/diskettes/task2Disk/task07.png"> 
-					<img loading="lazy" alt="animate" class="advantage" data-link="task2" data-description="Напиши функцию, которая будет динамически изменять любые свойства объекта" data-title="Анимация" draggable="true" id="animate" src="/img/diskettes/task2Disk/task08.png">
+					<img alt="square" class="advantage" data-link="task2" data-description="Ты напишешь алгоритм, вычисляющий площадь по двум сторонам." data-title="Площадь рамы" draggable="true" id="square" src="/img/diskettes/task2Disk/task01.png"> 
+					<img alt="evenNum" class="advantage" data-link="task2" data-description="Здесь ты создашь функцию, проверяющую четность введенного числа" data-title="Четность числа" draggable="true" id="evenNum" src="/img/diskettes/task2Disk/task02.png"> 
+					<img alt="array" class="advantage" data-link="task2" data-description="В этом задании ты создашь простой калькулятор для вычисления базовых действий" data-title="Калькулятор" draggable="true" id="array" src="/img/diskettes/task2Disk/task03.png"> 
+					<img alt="objects" class="advantage" data-link="task2" data-description="Создай карточку с информацией о себе и научись выводить из неё информацию" data-title="Объект" draggable="true" id="objects" src="/img/diskettes/task2Disk/task04.png"> 
+					<img alt="cycle" class="advantage" data-link="task2" data-description="В этом задании ты научишься обрабатывать данные в цикле, путем создания функции по вычислению факториала." data-title="Циклы" draggable="true" id="cycle" src="/img/diskettes/task2Disk/task05.png"> 
+					<img alt="strings" class="advantage" data-link="task2" data-description="Напиши функцию, которая принимает строку в качестве аргумента и возвращает ее в обратном порядке. " data-title="Строки" draggable="true" id="strings" src="/img/diskettes/task2Disk/task06.png"> 
+					<img alt="events" class="advantage" data-link="task2" data-description="В этом задании ты научишься обрабатывать различные действия на странице." data-title="Обработка событий" draggable="true" id="events" src="/img/diskettes/task2Disk/task07.png"> 
+					<img alt="animate" class="advantage" data-link="task2" data-description="Напиши функцию, которая будет динамически изменять любые свойства объекта" data-title="Анимация" draggable="true" id="animate" src="/img/diskettes/task2Disk/task08.png">
 				</div>
 			</div>
 		</div>
@@ -121,17 +125,17 @@
 			<div class="footerContactBlock">
 			<form action="#" class="blackForm">
 				<label for="contactEmail">Подписаться на обновления...</label> <input id="contactEmailField" name="contactEmail" placeholder="Ваш адрес эл.почты" type="email"> <input class="button orangeWhiteButton" id="emailSendButton" type="button" value="Отправить -&gt;">
-			</form><img loading="lazy" alt="" src="/img/stickers/disk.png"></div>
+			</form><img alt="" src="/img/stickers/disk.png"></div>
 		</div>
 		<div class="copyright button whiteButton">
 			2024
 		</div>
 	</footer>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js" defer></script>
-	<script src="/js/stroke.js" async></script>
-	<script src="/js/dragANDdrop.js" defer></script>
-	<script src="/js/navbar.js" async></script>
-	<script src="/js/formSender.js" defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
+	<script src="/js/stroke.js"></script>
+	<script src="/js/dragANDdrop.js"></script>
+	<script src="/js/navbar.js"></script>
+	<script src="/js/formSender.js"></script>
 </body>
 </html>

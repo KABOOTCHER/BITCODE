@@ -1,158 +1,128 @@
 document.addEventListener("DOMContentLoaded", function() {
     const floppyBlock = document.querySelector(".floppyBlock");
-    const screenTitle = document.querySelector(".screenTitle");
-    const screenContent = document.querySelector(".screen.tv-screen-content");
     const ejectButton = document.getElementById("ejectButton");
-    let originalState = null;
-    let addedButton = null;
+    const screenContent = document.querySelector(".screen.tv-screen-content");
+    const screenTitle = document.querySelector(".screenTitle");
+    let originalState = document.querySelector(".windowInfo").innerHTML;
     let blockAdded = false;
+    let addedButton = null;
 
-    // Save original state
-    originalState = document.querySelector(".windowInfo").innerHTML;
-
-    // Restore original state function
-    function restoreOriginalState() {
-        if (originalState) {
-            document.querySelector(".windowInfo").innerHTML = originalState;
-            blockAdded = false;
-            updateAdvantageEventListeners(); // Reattach event listeners
-        }
-
-        // Remove attached advantages from floppyLine
-        const attachedAdvantages = document.querySelectorAll(".floppyLine .advantage");
-        attachedAdvantages.forEach(advantage => {
-            advantage.remove();
-        });
-
-        // Remove added button and text blocks
-        if (addedButton) {
-            addedButton.remove();
-        }
-
-        const createdTextBlocks = document.querySelectorAll(".screen.tv-screen-content p");
-        createdTextBlocks.forEach(block => {
-            block.remove();
-        });
-
-        screenTitle.textContent = "#NO_SIGNAL";
-        screenTitle.classList.remove("biggerTitle");
+    function isTouchDevice() {
+        return 'ontouchstart' in window || (navigator.maxTouchPoints > 25 && navigator.maxTouchPoints < 256);
     }
 
-    // Eject button event listener
-    ejectButton.addEventListener("click", function() {
-        restoreOriginalState();
-        ejectButton.classList.remove("glow-white")
-    });
+    function restoreOriginalState() {
+        // Восстанавливаем первоначальное состояние
+        document.querySelector(".windowInfo").innerHTML = originalState;
 
-    // Event handler for click (for touch devices)
+        // Удаляем все "advantage" из "floppyLine"
+        const advantages = floppyBlock.querySelectorAll(".floppyLine .advantage");
+        advantages.forEach(advantage => advantage.remove());
+
+        // Очищаем контент в экране
+        screenContent.innerHTML = '';
+
+        // Восстанавливаем первоначальный заголовок
+        screenTitle.textContent = "#NO_SIGNAL";
+        screenTitle.classList.remove("biggerTitle");
+
+        // Сбрасываем состояния
+        blockAdded = false;
+        addedButton = null;
+
+        // Сбрасываем стили кнопки "Eject"
+        ejectButton.classList.remove("glow-white");
+
+        // Обновляем слушатели событий
+        updateEventListeners();
+    }
+
+    ejectButton.addEventListener("click", restoreOriginalState);
+
+    function dragStart(event) {
+        event.dataTransfer.setData("text/plain", event.target.id);
+    }
+
     function clickEvent(event) {
-        if (blockAdded) {
-            return;
-        }
-
+        if (blockAdded) return;
         const target = event.currentTarget;
         const data = target.id;
-        const draggedElement = document.getElementById(data);
         drop({
             preventDefault: function() {},
             dataTransfer: {
                 getData: function() {
                     return data;
-                }
-            }
+                },
+            },
         });
     }
 
-    // Drag start event handler
-    function dragStart(event) {
-        event.dataTransfer.setData("text/plain", event.target.id);
-    }
-
-    // Drag over event handler
     function dragOver(event) {
         event.preventDefault();
     }
 
-    // Drop event handler
     function drop(event) {
         event.preventDefault();
         const data = event.dataTransfer.getData("text/plain");
         const draggedElement = document.getElementById(data);
-        if (!draggedElement || blockAdded) {
-            return;
-        }
-        const parentAdvantage = draggedElement.parentElement;
-        if (!parentAdvantage || !parentAdvantage.classList.contains("windowInfo")) {
-            return;
-        }
-        if (floppyBlock.querySelector(".floppyLine")) {
-            floppyBlock.querySelector(".floppyLine").appendChild(draggedElement);
-        } else {
-            const floppyLine = document.createElement("hr");
+        if (!draggedElement || blockAdded) return;
+
+        // Убедимся, что "floppyLine" существует
+        let floppyLine = floppyBlock.querySelector(".floppyLine");
+        if (!floppyLine) {
+            floppyLine = document.createElement("hr");
             floppyLine.classList.add("floppyLine");
             floppyBlock.appendChild(floppyLine);
-            floppyLine.appendChild(draggedElement);
         }
-        const advantageTitle = draggedElement.getAttribute("data-title");
-        const advantageLink = draggedElement.getAttribute("data-link");
-        const advantageDescription = draggedElement.getAttribute("data-description");
-        const advantageId = draggedElement.id;
 
-        // Create text block and add to screenContent
-        const descriptionBlock = document.createElement("p");
-        descriptionBlock.textContent = advantageDescription;
-        screenContent.appendChild(descriptionBlock);
+        // Добавляем элемент к "floppyLine"
+        floppyLine.appendChild(draggedElement);
 
-        // Create button
+        // Добавляем описание в экран
+        const descBlock = document.createElement("p");
+        descBlock.textContent = draggedElement.getAttribute("data-description");
+        screenContent.appendChild(descBlock);
+
+        // Добавляем кнопку для перехода к заданию
         addedButton = document.createElement("a");
         addedButton.classList.add("button", "blueButton");
         addedButton.textContent = "Перейти к заданию";
-        addedButton.setAttribute("href",advantageLink +".html#" + advantageId);
+        const advantageLink = draggedElement.getAttribute("data-link");
+        addedButton.href = `${advantageLink}.html#${draggedElement.id}`;
         screenContent.appendChild(addedButton);
-        screenTitle.textContent = advantageTitle.toUpperCase();
-        
+
+        screenTitle.textContent = draggedElement.getAttribute("data-title").toUpperCase();
         if (window.innerWidth <= 500) {
-            screenTitle.classList.add('biggerTitle');
+            screenTitle.classList.add("biggerTitle");
         }
+
+        // Обновляем флаг блокировки и состояние кнопки "Eject"
         blockAdded = true;
-        ejectButton.classList.add("glow-white")
+        ejectButton.classList.add("glow-white");
     }
 
-    // Add event listeners for floppyBlock
-    floppyBlock.addEventListener("dragover", dragOver);
-    floppyBlock.addEventListener("drop", drop);
-
-    // Add event listeners for advantages
-    function updateAdvantageEventListeners() {
+    function updateEventListeners() {
         const advantages = document.querySelectorAll(".advantage");
+        const touchDevice = isTouchDevice();
+
         advantages.forEach(advantage => {
-            if ('ontouchstart' in window ||  (navigator.maxTouchPoints > 0 & navigator.maxTouchPoints < 256)) {
-                // If it's a touch device
+            if (touchDevice) {
                 advantage.removeEventListener("dragstart", dragStart);
                 advantage.addEventListener("click", clickEvent);
-                
             } else {
-                // If it's not a touch device
                 advantage.removeEventListener("click", clickEvent);
                 advantage.addEventListener("dragstart", dragStart);
-                
             }
         });
     }
 
-    // Initial call to update advantage event listeners based on window width
-    updateAdvantageEventListeners();
+    // Добавляем события "dragover" и "drop" на "floppyBlock"
+    floppyBlock.addEventListener("dragover", dragOver);
+    floppyBlock.addEventListener("drop", drop);
 
-    // Update advantage event listeners when window is resized
-    window.addEventListener("resize", updateAdvantageEventListeners);
+    // Начальная установка слушателей
+    updateEventListeners();
 
-    // Check for touch events support
-    const isTouchDevice = 'ontouchstart' in window || (navigator.maxTouchPoints > 0 & navigator.maxTouchPoints < 256);
-
-    // If it's a touch device, update the event listeners
-    if (isTouchDevice) {
-        updateAdvantageEventListeners();
-    }
+    // Обновляем слушатели при изменении размера окна
+    window.addEventListener("resize", updateEventListeners);
 });
-
-

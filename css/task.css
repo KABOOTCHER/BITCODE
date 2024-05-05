@@ -123,6 +123,7 @@ textarea {
     height: 100%; /* Заменяем -webkit-fill-available */
     border: none;
     padding: 5%;
+    padding-top: 5rem;
 }
 
 textarea:focus {

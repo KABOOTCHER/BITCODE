@@ -39,7 +39,7 @@ document.getElementById('screenOrange').addEventListener('click', showHtmlInput)
 document.getElementById('screenBlue').addEventListener('click', showCssInput);
 document.getElementById('screenYellow').addEventListener('click', showJsInput);
 // Показываем текстовую область ввода HTML после загрузки страницы
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 	showHtmlInput();
 });
 
@@ -66,7 +66,11 @@ function updateResult() {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Result</title>
                 <style>${cssCode}</style>
-                <script>${jsCode}</script>
+                <script>
+				document.addEventListener('DOMContentLoaded', () => {${jsCode} });
+			
+				
+				</script>
             </head>
             <body>${htmlCode}</body>
             </html>

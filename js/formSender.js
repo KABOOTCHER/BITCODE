@@ -1,8 +1,3 @@
-  // Применение маски к полю телефона
-  $("#phoneField").inputmask({
-    mask: "+7 (999) 999-99-99",  // Маска телефонного номера
-    removeMaskOnSubmit: true  // Удаление маски при отправке
-});
 
 // Обработчик для кнопки отправки основной формы
 $("#formSendButton").on("click", function () {
@@ -13,16 +8,14 @@ $("#formSendButton").on("click", function () {
     // Валидация полей
     var nameValid = /^[a-zA-Zа-яА-ЯёЁ\s]+$/.test(name);
     var emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    var phoneValid = /^\+?[0-9\s\-()]+$/.test(phone) && phone.length >= 11;
+  
 
     var errors = [];
 
     if (!nameValid) {
         errors.push("Введите корректное имя (только буквы и пробелы).");
     }
-    if (!phoneValid) {
-        errors.push("Введите корректный номер телефона (не менее 11 символов).");
-    }
+
     if (!emailValid) {
         errors.push("Введите корректный адрес электронной почты.");
     }
