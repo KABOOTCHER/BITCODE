@@ -1,128 +1,153 @@
 document.addEventListener("DOMContentLoaded", function() {
     const floppyBlock = document.querySelector(".floppyBlock");
-    const ejectButton = document.getElementById("ejectButton");
-    const screenContent = document.querySelector(".screen.tv-screen-content");
     const screenTitle = document.querySelector(".screenTitle");
-    let originalState = document.querySelector(".windowInfo").innerHTML;
-    let blockAdded = false;
+    const screenContent = document.querySelector(".screen.tv-screen-content");
+    const ejectButton = document.getElementById("ejectButton");
+    let originalState = null;
     let addedButton = null;
+    let blockAdded = false;
 
-    function isTouchDevice() {
-        return 'ontouchstart' in window || (navigator.maxTouchPoints > 25 && navigator.maxTouchPoints < 256);
-    }
+    originalState = document.querySelector(".windowInfo").innerHTML;
 
+  
     function restoreOriginalState() {
-        // Восстанавливаем первоначальное состояние
-        document.querySelector(".windowInfo").innerHTML = originalState;
+        if (originalState) {
+            document.querySelector(".windowInfo").innerHTML = originalState;
+            blockAdded = false;
+            updateAdvantageEventListeners();
+        }
 
-        // Удаляем все "advantage" из "floppyLine"
-        const advantages = floppyBlock.querySelectorAll(".floppyLine .advantage");
-        advantages.forEach(advantage => advantage.remove());
+      
+        const attachedAdvantages = document.querySelectorAll(".floppyLine .advantage");
+        attachedAdvantages.forEach(advantage => {
+            advantage.remove();
+        });
 
-        // Очищаем контент в экране
-        screenContent.innerHTML = '';
+      
+        if (addedButton) {
+            addedButton.remove();
+        }
 
-        // Восстанавливаем первоначальный заголовок
+        const createdTextBlocks = document.querySelectorAll(".screen.tv-screen-content p");
+        createdTextBlocks.forEach(block => {
+            block.remove();
+        });
+
         screenTitle.textContent = "#NO_SIGNAL";
         screenTitle.classList.remove("biggerTitle");
-
-        // Сбрасываем состояния
-        blockAdded = false;
-        addedButton = null;
-
-        // Сбрасываем стили кнопки "Eject"
-        ejectButton.classList.remove("glow-white");
-
-        // Обновляем слушатели событий
-        updateEventListeners();
     }
 
-    ejectButton.addEventListener("click", restoreOriginalState);
+   
+    ejectButton.addEventListener("click", function() {
+        restoreOriginalState();
+    });
 
-    function dragStart(event) {
-        event.dataTransfer.setData("text/plain", event.target.id);
-    }
 
     function clickEvent(event) {
-        if (blockAdded) return;
+        if (blockAdded) {
+            return;
+        }
+
         const target = event.currentTarget;
         const data = target.id;
+        const draggedElement = document.getElementById(data);
         drop({
             preventDefault: function() {},
             dataTransfer: {
                 getData: function() {
                     return data;
-                },
-            },
+                }
+            }
         });
     }
+
+
+    function dragStart(event) {
+        event.dataTransfer.setData("text/plain", event.target.id);
+    }
+
 
     function dragOver(event) {
         event.preventDefault();
     }
 
+  
     function drop(event) {
         event.preventDefault();
         const data = event.dataTransfer.getData("text/plain");
         const draggedElement = document.getElementById(data);
-        if (!draggedElement || blockAdded) return;
-
-        // Убедимся, что "floppyLine" существует
-        let floppyLine = floppyBlock.querySelector(".floppyLine");
-        if (!floppyLine) {
-            floppyLine = document.createElement("hr");
+        if (!draggedElement || blockAdded) {
+            return;
+        }
+        const parentAdvantage = draggedElement.parentElement;
+        if (!parentAdvantage || !parentAdvantage.classList.contains("windowInfo")) {
+            return;
+        }
+        if (floppyBlock.querySelector(".floppyLine")) {
+            floppyBlock.querySelector(".floppyLine").appendChild(draggedElement);
+        } else {
+            const floppyLine = document.createElement("hr");
             floppyLine.classList.add("floppyLine");
             floppyBlock.appendChild(floppyLine);
+            floppyLine.appendChild(draggedElement);
         }
+        const advantageTitle = draggedElement.getAttribute("data-title");
+        const advantageLink = draggedElement.getAttribute("data-link");
+        const advantageDescription = draggedElement.getAttribute("data-description");
+        const advantageId = draggedElement.id;
 
-        // Добавляем элемент к "floppyLine"
-        floppyLine.appendChild(draggedElement);
+       
+        const descriptionBlock = document.createElement("p");
+        descriptionBlock.textContent = advantageDescription;
+        screenContent.appendChild(descriptionBlock);
 
-        // Добавляем описание в экран
-        const descBlock = document.createElement("p");
-        descBlock.textContent = draggedElement.getAttribute("data-description");
-        screenContent.appendChild(descBlock);
-
-        // Добавляем кнопку для перехода к заданию
+        
         addedButton = document.createElement("a");
         addedButton.classList.add("button", "blueButton");
         addedButton.textContent = "Перейти к заданию";
-        const advantageLink = draggedElement.getAttribute("data-link");
-        addedButton.href = `${advantageLink}.html#${draggedElement.id}`;
+        addedButton.setAttribute("href",advantageLink +".html#" + advantageId);
         screenContent.appendChild(addedButton);
-
-        screenTitle.textContent = draggedElement.getAttribute("data-title").toUpperCase();
+        screenTitle.textContent = advantageTitle.toUpperCase();
+        
         if (window.innerWidth <= 500) {
-            screenTitle.classList.add("biggerTitle");
+            screenTitle.classList.add('biggerTitle');
         }
-
-        // Обновляем флаг блокировки и состояние кнопки "Eject"
         blockAdded = true;
-        ejectButton.classList.add("glow-white");
+   
     }
 
-    function updateEventListeners() {
-        const advantages = document.querySelectorAll(".advantage");
-        const touchDevice = isTouchDevice();
+  
+    floppyBlock.addEventListener("dragover", dragOver);
+    floppyBlock.addEventListener("drop", drop);
 
+    
+    function updateAdvantageEventListeners() {
+        const advantages = document.querySelectorAll(".advantage");
         advantages.forEach(advantage => {
-            if (touchDevice) {
+            if ('ontouchstart' in window ||  (navigator.maxTouchPoints > 25 & navigator.maxTouchPoints < 256)) {
+               
                 advantage.removeEventListener("dragstart", dragStart);
                 advantage.addEventListener("click", clickEvent);
+                
             } else {
+              
                 advantage.removeEventListener("click", clickEvent);
                 advantage.addEventListener("dragstart", dragStart);
+                
             }
         });
     }
 
-    // Добавляем события "dragover" и "drop" на "floppyBlock"
-    floppyBlock.addEventListener("dragover", dragOver);
-    floppyBlock.addEventListener("drop", drop);
+    updateAdvantageEventListeners();
 
-    // Начальная установка слушателей
-    updateEventListeners();
 
-    // Обновляем слушатели при изменении размера окна
-    window.addEventListener("resize", updateEventListeners);
+    window.addEventListener("resize", updateAdvantageEventListeners);
+
+
+    const isTouchDevice = 'ontouchstart' in window || (navigator.maxTouchPoints > 25 & navigator.maxTouchPoints < 256);
+
+ 
+    if (isTouchDevice) {
+        updateAdvantageEventListeners();
+    }
 });

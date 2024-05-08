@@ -1,7 +1,4 @@
-// Создаем массив с данными для справочника
-
 const ex = "Пример использования:"
-
 const referenceDataHTML = [
   {
     letter: "A",
@@ -1163,10 +1160,9 @@ const referenceDataCSS = [
   },
 ];
 
-// Функция для создания элементов для тегов
 function createTagElements(tags, wrapperId) {
   const tagsWrapper = document.getElementById(wrapperId);
-  const fragment = document.createDocumentFragment(); // Создаем фрагмент документа
+  const fragment = document.createDocumentFragment(); 
 
   tags.forEach(entry => {
     const title = document.createElement('h1');
@@ -1191,15 +1187,11 @@ function createTagElements(tags, wrapperId) {
       tagElement.appendChild(tagTitle);
       tagElement.appendChild(tagSubtitle);
 
-      // Добавляем обработчик события клика на тег
       tagElement.addEventListener('click', () => {
-        // Определяем, на какой tagsWrapper нажали
+  
         const tagsWrapperId = tagElement.closest('.tagsWrapper').id;
 
-        // Получаем соответствующий tagsWrapper
         const tagsWrapper = document.getElementById(tagsWrapperId);
-
-        // Скрываем только выбранный tagsWrapper
         tagsWrapper.style.display = 'none';
 
         const descriptionWrapper = document.createElement('div');
@@ -1208,12 +1200,11 @@ function createTagElements(tags, wrapperId) {
         const backButton = document.createElement('button');
         backButton.textContent = '✕';
         backButton.addEventListener('click', () => {
-          // При нажатии на кнопку "Назад" показываем обратно список тегов и скрываем информацию о теге
           tagsWrapper.style.display = '';
           descriptionWrapper.remove();
         });
 
-        const tagInfoTitle = document.createElement('h1'); // Меняем на h1
+        const tagInfoTitle = document.createElement('h1');
         tagInfoTitle.classList.add('title', 'screenTitle');
         tagInfoTitle.textContent = tag.title;
 
@@ -1260,7 +1251,7 @@ function createTagElements(tags, wrapperId) {
         tag.examples.forEach((example, index) => {
           const details = document.createElement('details');
         
-          // Добавляем атрибут open, чтобы первый элемент details был раскрытым по умолчанию
+         
           if (index === 0) {
             details.setAttribute('open', true);
           }
@@ -1293,7 +1284,7 @@ function createTagElements(tags, wrapperId) {
     fragment.appendChild(tagsContainer);
   });
 
-  tagsWrapper.appendChild(fragment); // Добавляем фрагмент на страницу одним разом
+  tagsWrapper.appendChild(fragment);
 
   return tagsWrapper;
 }
