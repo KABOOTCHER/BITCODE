@@ -9,18 +9,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
     originalState = document.querySelector(".windowInfo").innerHTML;
 
-  
+    //Функция для восстановления исходного состояния заданий
     function restoreOriginalState() {
         if (originalState) {
             document.querySelector(".windowInfo").innerHTML = originalState;
             blockAdded = false;
             updateAdvantageEventListeners();
+            
         }
 
       
         const attachedAdvantages = document.querySelectorAll(".floppyLine .advantage");
         attachedAdvantages.forEach(advantage => {
             advantage.remove();
+            ejectButton.classList.remove("glow-white")
         });
 
       
@@ -31,13 +33,14 @@ document.addEventListener("DOMContentLoaded", function() {
         const createdTextBlocks = document.querySelectorAll(".screen.tv-screen-content p");
         createdTextBlocks.forEach(block => {
             block.remove();
+          
         });
 
         screenTitle.textContent = "#NO_SIGNAL";
         screenTitle.classList.remove("biggerTitle");
     }
 
-   
+       //Вызов функции восстановления состояния
     ejectButton.addEventListener("click", function() {
         restoreOriginalState();
     });
@@ -85,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         if (floppyBlock.querySelector(".floppyLine")) {
             floppyBlock.querySelector(".floppyLine").appendChild(draggedElement);
+            ejectButton.classList.add("glow-white")
         } else {
             const floppyLine = document.createElement("hr");
             floppyLine.classList.add("floppyLine");

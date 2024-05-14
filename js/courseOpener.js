@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
    buttons.forEach(button => {
        button.addEventListener('click', function (event) {
-           const href = this.getAttribute('href'); // Получаем значение атрибута href
+           const href = this.getAttribute('href');
 
-           // Проверяем наличие ссылки
+       
            if (href) {
-               // Перенаправляем пользователя по ссылке
+             
                window.location.href = href;
            } else {
                event.preventDefault();

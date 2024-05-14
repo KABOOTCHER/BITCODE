@@ -1,3 +1,15 @@
+const firebaseConfig = {
+  apiKey: "AIzaSyByQT-2MJIxRq3aOvF8Osna6C36D6BKQlw",
+  authDomain: "bitcode-school.firebaseapp.com",
+  databaseURL: "https://bitcode-school-default-rtdb.firebaseio.com",
+  projectId: "bitcode-school",
+  storageBucket: "bitcode-school.appspot.com",
+  messagingSenderId: "737804952668",
+  appId: "1:737804952668:web:0d318fadb04ee8fb2d3299"
+};
+
+
+
 const ex = "Пример использования:"
 const referenceDataHTML = [
   {
@@ -1159,6 +1171,32 @@ const referenceDataCSS = [
     ]
   },
 ];
+
+
+firebase.initializeApp(firebaseConfig);
+
+// Получение ссылки на базу данных HTML и CSS
+const databaseHTMLRef = firebase.database().ref('html_data');
+const databaseCSSRef = firebase.database().ref('css_data');
+
+// Отправка массива referenceDataHTML в базу данных HTML
+databaseHTMLRef.set(referenceDataHTML)
+  .then(() => {
+    console.log("Массив referenceDataHTML успешно отправлен в базу данных HTML");
+  })
+  .catch((error) => {
+    console.error("Ошибка при отправке массива referenceDataHTML:", error);
+  });
+
+// Отправка массива referenceDataCSS в базу данных CSS
+databaseCSSRef.set(referenceDataCSS)
+  .then(() => {
+    console.log("Массив referenceDataCSS успешно отправлен в базу данных CSS");
+  })
+  .catch((error) => {
+    console.error("Ошибка при отправке массива referenceDataCSS:", error);
+  });
+
 
 function createTagElements(tags, wrapperId) {
   const tagsWrapper = document.getElementById(wrapperId);
