@@ -231,5 +231,6 @@ textarea:focus {
 
     .screenButtonsWrapper {
         gap: 0;
+        justify-content: space-around;
     }
 }

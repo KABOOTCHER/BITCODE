@@ -705,31 +705,29 @@ label {
 /* Стиль свечения для кнопки HTML */
 
 .glow-orange {
-	box-shadow: 0 0 15px rgba(255, 165, 0, 0.8);
+	box-shadow: 0 0 15px 6px rgb(255, 166, 0);
 	/* Оранжевая тень */
-	transition: box-shadow 0.2s ease-in-out;
-	/* Плавная анимация */
+
 }
 /* Стиль свечения для кнопки CSS */
 
 .glow-blue {
-	box-shadow: 0 0 15px rgba(0, 0, 255, 0.8);
+	box-shadow: 0 0 15px 6px rgba(0, 0, 255, 1);
 	/* Синяя тень */
-	transition: box-shadow 0.2s ease-in-out;
-	/* Плавная анимация */
+
 }
 /* Стиль свечения для кнопки JS */
 
 .glow-yellow {
-	box-shadow: 0 0 15px rgba(255, 255, 0, 0.8);
+	box-shadow: 0 0 15px 6px rgba(255, 255, 0, 1);
 	/*Желтаятень*/transition: box-shadow 0.2s ease-in-out;
 
 }
+
 .glow-white {
 	box-shadow: 0 0 20px 7px rgba(255, 255, 255, 0.8);
 	/* Желтая тень */
-	transition: box-shadow 0.2s ease-in-out;
-	/* Плавная анимация */
+
 }
 /* Стиль свечения при наведении */
 
